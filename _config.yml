@@ -1,0 +1,18 @@
+title: "Yuetong Fang"
+description: "Personal Academic Website"
+baseurl: ""
+url: "https://yuetong-fang.github.io"
+theme: minima
+
+# 自定义配置
+navbar_color: "#6a0dad"
+background_color: "#ffffff"
+
+# 插件
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# 构建设置
+markdown: kramdown
+highlighter: rouge

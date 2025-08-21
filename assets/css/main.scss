@@ -1,0 +1,62 @@
+---
+# Only the main Sass file needs front matter
+---
+
+@import "variables";
+@import "navbar";
+
+// 全局样式
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  line-height: 1.6;
+  color: $text-dark;
+  background-color: $background-color;
+  padding-top: 60px; // 为固定导航栏留出空间
+}
+
+.page-content {
+  padding: 2rem 0;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+// 主页样式
+.home-content {
+  text-align: center;
+  padding: 2rem 0;
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: $navbar-bg;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: lighten($text-dark, 20%);
+  }
+}
+
+// 页脚样式
+.site-footer {
+  background-color: lighten($navbar-bg, 40%);
+  padding: 1rem 0;
+  text-align: center;
+  margin-top: 2rem;
+  
+  p {
+    color: $text-dark;
+    font-size: 0.9rem;
+  }
+}

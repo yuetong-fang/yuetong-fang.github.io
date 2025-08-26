@@ -1,10 +1,31 @@
-<nav class="navbar">
-    <div class="nav-container">
-        {% for item in site.data.navigation %}
-        <a href="{{ item.link | relative_url }}" class="nav-link">
-            <i class="{{ item.icon }}"></i>
-            {{ item.name }}
-        </a>
+<header>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">
+        <a href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+      </div>
+      <ul class="nav-links">
+        {% for item in site.data.navigation.links %}
+          <li>
+            <a href="{{ item.url | relative_url }}" 
+               {% if page.url == item.url %}class="active"{% endif %}>
+              {{ item.title }}
+            </a>
+          </li>
         {% endfor %}
+      </ul>
+      <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-</nav>
+  </nav>
+</header>
+
+<script>
+  // 移动菜单切换
+  document.getElementById('mobile-menu').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('active');
+  });
+</script>

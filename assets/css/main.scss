@@ -1,92 +1,198 @@
+
+// 导入变量和部分
 @import "variables";
 @import "navbar";
 
-// 全局重置
+/* 基础样式与重置 */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: $font-stack;
 }
 
 body {
-  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
-  color: $text-dark;
-  background: $background-color;
-  padding-top: 80px; // 导航栏高度
+  background-color: #f9f9f9;
+  color: $text-color;
+  line-height: $line-height-base;
+  padding-top: 80px; // 为固定导航栏留出空间
 }
 
-// 内容区域优化
-.page-content {
-  padding: 3rem 0;
-  min-height: calc(100vh - 200px); // 确保页脚在底部
+a {
+  text-decoration: none;
+  color: $primary-color;
+  transition: $transition;
+  
+  &:hover {
+    color: $secondary-color;
+  }
 }
 
-.wrapper {
+.container {
+  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 15px;
 }
 
-// 标题样式
-h1, h2, h3, h4, h5, h6 {
-  color: $primary-dark;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-  line-height: 1.3;
+// 主要内容区域
+.main-content {
+  min-height: calc(100vh - 160px);
 }
 
-h1 {
-  font-size: 3rem;
-  background: linear-gradient(135deg, $primary-color 0%, $primary-light 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-h2 {
-  font-size: 2.2rem;
-  border-left: 4px solid $primary-color;
-  padding-left: 1rem;
-  margin-top: 3rem;
-}
-
-// 链接样式
-a {
-  color: $primary-color;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    color: $primary-dark;
-    text-decoration: underline;
-  }
-}
-
-// 列表样式
-ul, ol {
-  margin-left: 2rem;
+.hero {
+  padding: 4rem 0;
+  text-align: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 0 0 10px 10px;
   margin-bottom: 2rem;
   
-  li {
-    margin-bottom: 0.5rem;
-    line-height: 1.8;
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: $dark-color;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: $dark-color;
   }
 }
 
-// 卡片样式（用于内容区块）
+.section {
+  padding: 3rem 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: $primary-color;
+  position: relative;
+  padding-bottom: 0.5rem;
+  
+  &:after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background-color: $primary-color;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
 .card {
-  background: $background-color;
-  border-radius: 12px;
-  padding: 2rem;
-  margin: 2rem 0;
-  box-shadow: $shadow;
-  border: 1px solid $border-color;
-  transition: all 0.3s ease;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: $transition;
   
   &:hover {
-    box-shadow: $shadow-hover;
-    transform: translateY(-2px);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   }
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1.5rem;
+  
+  h3 {
+    margin-bottom: 0.5rem;
+    color: $primary-color;
+  }
+}
+
+// 页脚样式
+.footer {
+  background-color: $dark-color;
+  color: $text-light;
+  padding: 2rem 0;
+  text-align: center;
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  p {
+    margin: 0.5rem 0;
+  }
+}
+
+.social-links {
+  display: flex;
+  list-style: none;
+  margin: 1rem 0;
+  
+  li {
+    margin: 0 0.5rem;
+  }
+  
+  a {
+    color: $text-light;
+    font-size: 1.5rem;
+    transition: $transition;
+    
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+// 响应式设计
+@media (max-width: $breakpoint-md) {
+  .hero {
+    h1 {
+      font-size: 2.2rem;
+    }
+    
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+// 工具类
+.text-center {
+  text-align: center;
+}
+
+.mt-4 {
+  margin-top: 2rem;
+}
+
+.mb-4 {
+  margin-bottom: 2rem;
+}
+
+// 动画效果
+.fade-in {
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

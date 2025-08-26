@@ -1,21 +1,25 @@
-// ===== 颜色变量 =====
-$primary-color: #6a0dad;
-$primary-light: #8a2be2;
-$primary-dark: #5a0a9d;
+// 颜色变量
+$primary-color: #6a0dad; // 紫色
+$secondary-color: #8a2be2;
+$dark-color: #333;
+$light-color: #f4f4f4;
+$accent-color: #9370db;
+$text-color: #333;
+$text-light: #fff;
 
-$text-light: #ffffff;
-$text-dark: #333333;
-$text-muted: #666666;
+// 字体变量
+$font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.6;
 
-$background-color: #ffffff;
-$background-alt: #f8f9fa;
+// 间距变量
+$spacing-unit: 8px;
 
-// ===== 阴影和边框 =====
-$shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-$shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
-$border-color: #e2e8f0;
+// 响应式断点
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
 
-// ===== 响应式断点 =====
-$mobile: 768px;
-$tablet: 1024px;
-$desktop: 1200px;
+// 过渡效果
+$transition: all 0.3s ease;

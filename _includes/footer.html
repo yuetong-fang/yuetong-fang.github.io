@@ -1,8 +1,21 @@
-<footer class="site-footer">
-    <div class="wrapper">
-        <p>&copy; 2025 {{ site.title }}. All rights reserved.</p>
-        <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a> & 
-           <a href="https://pages.github.com/">GitHub Pages</a></p>
-        <p>Last update: {{ site.time | date: "%Y-%m-%d" }}</p>
-    </div>
+<footer class="footer">
+  <div class="container footer-content">
+    <ul class="social-links">
+      {% if site.social_links.github %}
+      <li><a href="https://github.com/{{ site.social_links.github }}"><i class="fab fa-github"></i></a></li>
+      {% endif %}
+      
+      {% if site.social_links.linkedin %}
+      <li><a href="https://linkedin.com/in/{{ site.social_links.linkedin }}"><i class="fab fa-linkedin"></i></a></li>
+      {% endif %}
+      
+      {% if site.social_links.twitter %}
+      <li><a href="https://twitter.com/{{ site.social_links.twitter }}"><i class="fab fa-twitter"></i></a></li>
+      {% endif %}
+      
+      <li><a href="mailto:{{ site.author.email }}"><i class="fas fa-envelope"></i></a></li>
+    </ul>
+    <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All Rights Reserved.</p>
+    <p>Last updated: <span id="last-updated">{{ site.time | date: "%B %d, %Y" }}</span></p>
+  </div>
 </footer>

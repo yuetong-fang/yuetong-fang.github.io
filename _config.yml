@@ -16,3 +16,16 @@ plugins:
 # 构建设置
 markdown: kramdown
 highlighter: rouge
+
+
+# 排除文件
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# 自定义变量
+author:
+  name: Yuetong Fang
+  email: yuetong.fang@univ-angers.fr

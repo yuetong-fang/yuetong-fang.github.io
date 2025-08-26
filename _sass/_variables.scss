@@ -2,9 +2,14 @@
 $primary-color: #6a1b9a;
 $primary-light: #9c4dcc;
 $primary-dark: #38006b;
-$footer-color: #e1bee7;
+$footer-color: #e1bee7; // 浅紫色背景
 $text-color: #333;
 $background-color: #fff;
+
+// Navigation colors - 增加对比度
+$nav-text-color: #ffffff; // 白色文字，提高对比度
+$nav-hover-color: #ffcc80; // 悬停时的琥珀色
+$nav-active-color: #ffcc80; // 活动页面的琥珀色
 
 // Spacing variables
 $spacing: 1rem;

@@ -1,11 +1,4 @@
----
-# Only the main Sass file needs front matter
----
-
-@import "variables";
-@import "navbar";
-
-// 全局样式
+// 全局重置
 * {
   margin: 0;
   padding: 0;
@@ -13,50 +6,84 @@
 }
 
 body {
-  font-family: $font-family;
-  font-size: $font-size-base;
-  line-height: 1.6;
+  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
   color: $text-dark;
-  background-color: $background-color;
-  padding-top: 60px; // 为固定导航栏留出空间
+  background: $background-color;
+  padding-top: 80px; // 导航栏高度
 }
 
+// 内容区域优化
 .page-content {
-  padding: 2rem 0;
+  padding: 3rem 0;
+  min-height: calc(100vh - 200px); // 确保页脚在底部
 }
 
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
-// 主页样式
-.home-content {
-  text-align: center;
-  padding: 2rem 0;
+// 标题样式
+h1, h2, h3, h4, h5, h6 {
+  color: $primary-dark;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 3rem;
+  background: linear-gradient(135deg, $primary-color 0%, $primary-light 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  font-size: 2.2rem;
+  border-left: 4px solid $primary-color;
+  padding-left: 1rem;
+  margin-top: 3rem;
+}
+
+// 链接样式
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: all 0.3s ease;
   
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: $navbar-bg;
-  }
-  
-  p {
-    font-size: 1.2rem;
-    color: lighten($text-dark, 20%);
+  &:hover {
+    color: $primary-dark;
+    text-decoration: underline;
   }
 }
 
-// 页脚样式
-.site-footer {
-  background-color: lighten($navbar-bg, 40%);
-  padding: 1rem 0;
-  text-align: center;
-  margin-top: 2rem;
+// 列表样式
+ul, ol {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
   
-  p {
-    color: $text-dark;
-    font-size: 0.9rem;
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.8;
+  }
+}
+
+// 卡片样式（用于内容区块）
+.card {
+  background: $background-color;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: $shadow;
+  border: 1px solid $border-color;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    box-shadow: $shadow-hover;
+    transform: translateY(-2px);
   }
 }

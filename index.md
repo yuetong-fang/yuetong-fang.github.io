@@ -1,12 +1,11 @@
 ---
-layout: home
-title: "Home"
+layout: Yuetong Fang
+title: "Yuetong Fang's homepage"
 permalink: /
 ---
 
 <div class="home-content">
-  <h1>Welcome to My Academic Website</h1>
-  <p>This is my personal homepage built with Jekyll and GitHub Pages.</p>
+  <p>I am currently a doctoral student at Universite d'Angers./p>
   
   
 </div>

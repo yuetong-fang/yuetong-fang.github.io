@@ -1,25 +1,99 @@
-// 颜色变量
-$primary-color: #6a0dad; // 紫色
-$secondary-color: #8a2be2;
-$dark-color: #333;
-$light-color: #f4f4f4;
-$accent-color: #9370db;
-$text-color: #333;
-$text-light: #fff;
-
-// 字体变量
-$font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$font-size-base: 16px;
-$line-height-base: 1.6;
-
-// 间距变量
-$spacing-unit: 8px;
-
-// 响应式断点
-$breakpoint-sm: 576px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 992px;
-$breakpoint-xl: 1200px;
-
-// 过渡效果
-$transition: all 0.3s ease;
+.navbar {
+  background-color: $primary-color;
+  color: $text-light;
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    
+    a {
+      color: $text-light;
+    }
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    
+    li {
+      margin-left: 1.5rem;
+    }
+    
+    a {
+      color: $text-light;
+      font-weight: 500;
+      padding: 0.5rem 0;
+      position: relative;
+      
+      &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: $text-light;
+        transition: $transition;
+      }
+      
+      &:hover:after, &.active:after {
+        width: 100%;
+      }
+    }
+  }
+  
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    
+    span {
+      width: 25px;
+      height: 3px;
+      background-color: $text-light;
+      margin: 2px 0;
+      transition: $transition;
+    }
+  }
+  
+  // 响应式设计
+  @media (max-width: $breakpoint-md) {
+    .menu-toggle {
+      display: flex;
+    }
+    
+    .nav-links {
+      position: fixed;
+      top: 70px;
+      left: -100%;
+      flex-direction: column;
+      background-color: $primary-color;
+      width: 100%;
+      text-align: center;
+      transition: $transition;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      padding: 1rem 0;
+      
+      &.active {
+        left: 0;
+      }
+      
+      li {
+        margin: 1rem 0;
+      }
+    }
+  }
+}

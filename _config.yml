@@ -1,27 +1,28 @@
-# Site settings
-title: "Yuetong Fang"
-email: "yuetong.fang@univ-angers.fr"
-description: "Personal Academic Website"
+title: YUETO Academic Homepage
+description: Personal academic website of Dr. Yue To
 baseurl: ""
-url: "https://yuetong-fang.github.io"
-github_username: yuetong-fang
+url: "https://username.github.io"
+theme: minima
+
+# Navigation
+nav_external_links:
+  - title: Home
+    url: /
+  - title: Research
+    url: /research
+  - title: Teaching
+    url: /teaching
+  - title: Others
+    url: /others
 
 # Build settings
 markdown: kramdown
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# Exclude files
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
-
-# Navigation
-show_downloads: false
-
 # Custom variables
-author: "Yuetong Fang"
+primary_color: "#6a1b9a"
+primary_light: "#9c4dcc"
+primary_dark: "#38006b"
+footer_color: "#e1bee7"

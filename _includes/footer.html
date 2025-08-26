@@ -1,9 +1,21 @@
 <footer>
     <div class="footer-content">
         <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title | escape }}. All Rights Reserved.</p>
-        <p>Last updated: <span id="last-modified"></span></p>
+        <p>Last updated: <span id="last-modified">{{ site.time | date: '%B %d, %Y' }}</span></p>
     </div>
 </footer>
+
 <script>
-    document.getElementById('last-modified').textContent = document.lastModified;
+    // Update last modified date
+    document.addEventListener('DOMContentLoaded', function() {
+        const lastModified = document.getElementById('last-modified');
+        if (lastModified) {
+            // Use the actual last modified date of the document
+            lastModified.textContent = new Date(document.lastModified).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+    });
 </script>

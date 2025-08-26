@@ -5,9 +5,49 @@
 </head>
 <body>
     {% include header.html %}
+    
     <main class="container">
         {{ content }}
     </main>
+    
     {% include footer.html %}
+    
+    <!-- Additional scripts -->
+    <script>
+        // Scroll effect for navbar
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (navbar) {
+                if (window.scrollY > 50) {
+                    navbar.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
+                    navbar.style.padding = '0.7rem 0';
+                } else {
+                    navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
+                    navbar.style.padding = '1rem 0';
+                }
+            }
+        });
+        
+        // Read more button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const readMoreButtons = document.querySelectorAll('.read-more');
+            
+            readMoreButtons.forEach(button => {
+                button.addEventListener('mouseenter', () => {
+                    button.style.backgroundColor = '#6a1b9a';
+                    button.style.color = 'white';
+                });
+                
+                button.addEventListener('mouseleave', () => {
+                    button.style.backgroundColor = '';
+                    button.style.color = '';
+                });
+                
+                button.addEventListener('click', () => {
+                    alert('This would navigate to the full article/course details in a real implementation.');
+                });
+            });
+        });
+    </script>
 </body>
 </html>

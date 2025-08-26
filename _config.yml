@@ -1,31 +1,27 @@
+# Site settings
 title: "Yuetong Fang"
+email: "yuetong.fang@univ-angers.fr"
 description: "Personal Academic Website"
 baseurl: ""
 url: "https://yuetong-fang.github.io"
+github_username: yuetong-fang
+
+# Build settings
+markdown: kramdown
 theme: minima
-
-# 自定义配置
-navbar_color: "#6a0dad"
-background_color: "#ffffff"
-
-# 插件
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# 构建设置
-markdown: kramdown
-highlighter: rouge
-
-
-# 排除文件
+# Exclude files
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
   - vendor
 
-# 自定义变量
-author:
-  name: Yuetong Fang
-  email: yuetong.fang@univ-angers.fr
+# Navigation
+show_downloads: false
+
+# Custom variables
+author: "Yuetong Fang"

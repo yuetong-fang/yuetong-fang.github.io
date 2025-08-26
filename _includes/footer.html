@@ -1,10 +1,9 @@
-<footer class="site-footer">
-  <div class="wrapper">
-    <div class="footer-col-wrapper">
-      <div class="footer-col">
-        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
-        <p>Last updated: {{ site.time | date: "%B %d, %Y" }}</p>
-      </div>
+<footer>
+    <div class="footer-content">
+        <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title | escape }}. All Rights Reserved.</p>
+        <p>Last updated: <span id="last-modified"></span></p>
     </div>
-  </div>
 </footer>
+<script>
+    document.getElementById('last-modified').textContent = document.lastModified;
+</script>

@@ -1,13 +1,21 @@
-// Colors
-$text-light: #ffffff;      // 白色文字
-$text-dark: #333333;       // 深色文字
-$navbar-bg: #6a0dad;       // 导航栏紫色
-$primary-color: #6a0dad;   // 主色调
-$primary-light: #8a2be2;   // 亮紫色
+// ===== 颜色变量 =====
+$primary-color: #6a0dad;
+$primary-light: #8a2be2;
+$primary-dark: #5a0a9d;
 
-// Typography
-$font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-$font-size-base: 16px;
+$text-light: #ffffff;
+$text-dark: #333333;
+$text-muted: #666666;
 
-// Spacing
-$spacing-unit: 1rem;
+$background-color: #ffffff;
+$background-alt: #f8f9fa;
+
+// ===== 阴影和边框 =====
+$shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+$shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+$border-color: #e2e8f0;
+
+// ===== 响应式断点 =====
+$mobile: 768px;
+$tablet: 1024px;
+$desktop: 1200px;

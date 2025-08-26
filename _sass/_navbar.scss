@@ -1,6 +1,6 @@
 .navbar {
     background-color: $primary-color;
-    color: white;
+    color: $nav-text-color; // 使用高对比度颜色
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -21,6 +21,7 @@
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
+    color: $nav-text-color; // 确保logo也是高对比度
 }
 
 .nav-menu {
@@ -31,23 +32,24 @@
 .nav-item {
     margin-left: 2rem;
     position: relative;
-    font-weight: 500;
+    font-weight: 600; // 增加字体粗细提高可读性
     font-size: 1.1rem;
     padding: 0.5rem 0;
     transition: color 0.3s ease;
+    color: $nav-text-color; // 使用高对比度颜色
     
     &:hover {
-        color: #e0e0e0;
+        color: $nav-hover-color;
     }
     
     &::after {
         content: '';
         position: absolute;
         width: 0;
-        height: 2px;
+        height: 3px; // 加粗下划线
         bottom: 0;
         left: 0;
-        background-color: white;
+        background-color: $nav-hover-color;
         transition: width 0.3s ease;
     }
     
@@ -57,12 +59,13 @@
 }
 
 .active-page {
-    color: #ffcc80 !important;
-    font-weight: 600;
+    color: $nav-active-color !important;
+    font-weight: 700; // 更粗的字体
     
     &::after {
         width: 100% !important;
-        background-color: #ffcc80 !important;
+        background-color: $nav-active-color !important;
+        height: 3px; // 加粗下划线
     }
 }
 
@@ -70,6 +73,7 @@
     display: none;
     cursor: pointer;
     font-size: 1.5rem;
+    color: $nav-text-color; // 汉堡菜单图标颜色
 }
 
 // Mobile styles
@@ -97,5 +101,10 @@
     
     .nav-item {
         margin: 1.5rem 0;
+        color: $nav-text-color; // 确保移动端也有高对比度
+        
+        &:hover {
+            color: $nav-hover-color;
+        }
     }
 }

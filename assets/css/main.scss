@@ -113,6 +113,27 @@
     }
 }
 
+// Footer styles - 更新页脚为浅紫色
+footer {
+    background-color: $footer-color; // 使用变量中的浅紫色
+    color: $primary-dark;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: auto;
+    
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        
+        p {
+            margin: 0.5rem 0;
+            color: $primary-dark; // 深紫色文字提高对比度
+            font-weight: 500; // 增加字体粗细
+        }
+    }
+}
+
 // Responsive design
 @media screen and (max-width: 768px) {
     .hero {
@@ -127,5 +148,18 @@
     
     .card {
         padding: 1rem;
+    }
+    
+    // 移动端页脚调整
+    footer {
+        padding: 1rem 0;
+        
+        .footer-content {
+            padding: 0 1rem;
+            
+            p {
+                font-size: 0.9rem;
+            }
+        }
     }
 }

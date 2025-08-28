@@ -13,5 +13,5 @@ permalink: /
 <section class="section">
     <h3 class="section-title">Contact</h3>
     <p>E-mail: yuetong.fang@univ-angers.fr</p>
-    <p>Adress: Laboratoire Angevin de REcherche en MAthématiques, Université d'Angers, 2 Boulevard de Lavoisier, 49000 Angers, France</p>
+    <p>Adress: Laboratoire Angevin de Recherche en Mathématiques, Université d'Angers, 2 Boulevard de Lavoisier, 49000 Angers, France</p>
     <p>Office: i009</p>

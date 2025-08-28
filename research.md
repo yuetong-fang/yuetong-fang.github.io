@@ -77,15 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
         abstract.style.display = 'none';
     });
     
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const abstractButtons = document.querySelectorAll('.abstract-toggle');
-    
-    // 初始隐藏所有摘要
-    document.querySelectorAll('.publication-abstract').forEach(abstract => {
-        abstract.style.display = 'none';
-    });
-    
     abstractButtons.forEach(button => {
         button.addEventListener('click', function() {
             const targetId = this.getAttribute('data-target');

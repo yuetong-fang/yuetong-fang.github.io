@@ -8,11 +8,10 @@ title: Research
 
 {% assign preprints = site.data.publications | where: "type", "preprint" | sort: "year" | reverse %}
 {% if preprints.size > 0 %}
-<div class="publication-list">
 {% for paper in preprints %}
-<div class="publication-item" id="pub-preprint-{{ forloop.index }}">
-    <span class="publication-number">{{ forloop.length | minus: forloop.index0 }}.</span>
-    <div class="publication-main">
+<div class="publication-item">
+    <div class="publication-content">
+        <span class="publication-number">{{ forloop.length | minus: forloop.index0 }}.</span>
         <span class="publication-title">{{ paper.title }}</span>
         {% if paper.authors != "Y. Fang" and paper.authors != "Fang, Y." %}
         <span class="publication-authors"> with {{ paper.authors | remove: "Fang, Y., " | remove: ", Fang, Y." | remove: "Y. Fang, " | remove: ", Y. Fang" }}</span>
@@ -26,13 +25,10 @@ title: Research
         {% endif %}
     </div>
     {% if paper.abstract %}
-    <div class="publication-abstract-container">
-        <div class="publication-abstract" id="abstract-preprint-{{ forloop.index }}">{{ paper.abstract }}</div>
-    </div>
+    <div class="publication-abstract" id="abstract-preprint-{{ forloop.index }}">{{ paper.abstract }}</div>
     {% endif %}
 </div>
 {% endfor %}
-</div>
 {% else %}
 <div class="no-publications">No preprints available at the moment.</div>
 {% endif %}
@@ -43,11 +39,10 @@ title: Research
 
 {% assign journal_papers = site.data.publications | where: "type", "journal" | sort: "year" | reverse %}
 {% if journal_papers.size > 0 %}
-<div class="publication-list">
 {% for paper in journal_papers %}
-<div class="publication-item" id="pub-{{ forloop.index }}">
-    <span class="publication-number">{{ forloop.length | minus: forloop.index0 }}.</span>
-    <div class="publication-main">
+<div class="publication-item">
+    <div class="publication-content">
+        <span class="publication-number">{{ forloop.length | minus: forloop.index0 }}.</span>
         <span class="publication-title">{{ paper.title }}</span>
         {% if paper.authors != "Y. Fang" and paper.authors != "Fang, Y." %}
         <span class="publication-authors"> with {{ paper.authors | remove: "Fang, Y., " | remove: ", Fang, Y." | remove: "Y. Fang, " | remove: ", Y. Fang" }}</span>
@@ -64,19 +59,25 @@ title: Research
         {% endif %}
     </div>
     {% if paper.abstract %}
-    <div class="publication-abstract-container">
-        <div class="publication-abstract" id="abstract-{{ forloop.index }}">{{ paper.abstract }}</div>
-    </div>
+    <div class="publication-abstract" id="abstract-{{ forloop.index }}">{{ paper.abstract }}</div>
     {% endif %}
 </div>
 {% endfor %}
-</div>
 {% else %}
 <div class="no-publications">No publications available at the moment.</div>
 {% endif %}
 </section>
 
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const abstractButtons = document.querySelectorAll('.abstract-toggle');
+    
+    // 初始隐藏所有摘要
+    document.querySelectorAll('.publication-abstract').forEach(abstract => {
+        abstract.style.display = 'none';
+    });
+    
+    <script>
 document.addEventListener('DOMContentLoaded', function() {
     const abstractButtons = document.querySelectorAll('.abstract-toggle');
     
@@ -100,14 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     abstractDiv.style.display = 'block';
                     this.textContent = 'Hide Abstract';
                 }
-                
-                // 重新计算布局（如果需要）
-                setTimeout(() => {
-                    const items = document.querySelectorAll('.publication-item');
-                    items.forEach(item => {
-                        item.style.marginBottom = '0.8rem';
-                    });
-                }, 10);
             }
         });
     });

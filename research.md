@@ -2,8 +2,8 @@
 layout: default
 title: Research
 ---
-<section class="publication-section">
-## Preprints
+<section class="section">
+  <h3 class="section-title">Preprints</h3>
 
 {% assign preprints = site.data.publications | where: "type", "preprint" | sort: "year" | reverse %}
 {% if preprints.size > 0 %}
@@ -13,7 +13,7 @@ title: Research
     <div class="publication-details">
         <span class="publication-title">{{ paper.title }}</span>
         {% if paper.authors != "Y. Fang" and paper.authors != "Fang, Y." %}
-        <span class="publication-authors"> with {{ paper.authors | remove: "Fang, Y., " | remove: ", Fang, Y." | remove: "Y. Fang, " | remove: ", Y. Fang" }}</span>
+        <span class="publication-authors"> {{ paper.authors | remove: "Fang, Y., " | remove: ", Fang, Y." | remove: "Y. Fang, " | remove: ", Y. Fang" }}</span>
         {% endif %}
         <span class="publication-meta">, {{ paper.archive }}, {{ paper.year }}</span>
         {% if paper.arxiv %}
@@ -33,8 +33,8 @@ title: Research
 {% endif %}
 </section>
 
-<section class="publication-section">
-## Publications
+<section class="section">
+  <h2 class="section-title">Publication</h2>
 
 {% assign journal_papers = site.data.publications | where: "type", "journal" | sort: "year" | reverse %}
 {% if journal_papers.size > 0 %}

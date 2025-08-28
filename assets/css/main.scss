@@ -170,9 +170,9 @@ footer {
 
 }
 
-// Research页面
+// Research页面样式
 .research-page {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     font-family: 'Helvetica', 'Arial', sans-serif;
     line-height: 1.6;
@@ -186,59 +186,76 @@ footer {
 }
 
 .section h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 600;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid #6a1b9a;
     color: #333;
 }
 
-// 出版物项目
+// 出版物项目 - 块级元素确保正确布局
 .publication-item {
     margin-bottom: 1rem;
-    position: relative;
+    padding: 0.8rem 0;
 }
 
-// 出版物内容 - 一行显示
-.publication-content {
-    line-height: 1.5;
+// 第一行：标题和作者
+.publication-header {
+    display: block;
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
 }
 
 .publication-number {
-    font-weight: normal;
+    font-weight: 500;
     margin-right: 0.5rem;
-    color: #666;
+    color: #6a1b9a;
+    display: inline;
 }
 
 .publication-title {
-    font-style: italic;
-    color: #222;
+    font-weight: 500;
+    color: #333;
+    display: inline;
 }
 
 .publication-authors {
     color: #666;
+    font-size: 0.95em;
+    display: inline;
 }
 
+// 第二行：元信息和链接
 .publication-meta {
+    display: block;
+    color: #666;
+    font-size: 0.9em;
+    margin-left: 1.8rem; // 与编号对齐
+    line-height: 1.4;
+}
+
+.publication-info {
+    display: inline;
     color: #666;
 }
 
 .publication-links {
-    color: #6a1b9a;
+    display: inline;
+    margin-left: 0.5rem;
 }
 
-.publication-links a {
+.publication-meta a {
     color: #6a1b9a;
     text-decoration: none;
-    border-bottom: 1px solid #6a1b9a;
-    transition: border-bottom 0.2s ease;
 }
 
-.publication-links a:hover {
-    border-bottom: 2px solid #6a1b9a;
+.publication-meta a:hover {
+    text-decoration: underline;
+    color: #4a148c;
 }
 
+// Abstract按钮
 .abstract-toggle {
     background: none;
     border: none;
@@ -247,32 +264,30 @@ footer {
     cursor: pointer;
     padding: 0;
     font: inherit;
-    border-bottom: 1px solid #6a1b9a;
-    transition: border-bottom 0.2s ease;
+    font-size: 0.9em;
 }
 
 .abstract-toggle:hover {
-    border-bottom: 2px solid #6a1b9a;
+    text-decoration: underline;
+    color: #4a148c;
 }
 
-// Abstract样式 - 不影响布局
+// Abstract内容 - 显示在文章下方，影响布局
 .publication-abstract {
-    margin-top: 0.8rem;
-    padding: 0.8rem;
     background: #f8f9fa;
+    padding: 0.8rem 1rem;
+    margin: 0.5rem 0 0 1.8rem; // 与元信息对齐
     border-left: 3px solid #6a1b9a;
-    border-radius: 0 4px 4px 0;
-    color: #555;
-    font-style: normal;
+    border-radius: 0 3px 3px 0;
+    font-size: 0.9em;
     line-height: 1.5;
+    color: #555;
     display: none; // 默认隐藏
-    position: relative;
 }
 
-// 确保abstract展开时不改变其他内容位置
-.publication-item {
-    transition: none;
-    min-height: auto;
+// 当abstract显示时，正常占据空间
+.publication-abstract[style*="block"] {
+    display: block;
 }
 
 // 无内容时的样式
@@ -283,6 +298,19 @@ footer {
     text-align: center;
     background: #f8f9fa;
     border-radius: 4px;
+    margin-left: 1.8rem;
+}
+
+// 链接样式统一
+a {
+    color: #6a1b9a;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #4a148c;
+    text-decoration: underline;
 }
 
 // 响应式设计
@@ -292,38 +320,46 @@ footer {
         font-size: 14px;
     }
     
-    .section {
-        margin: 2rem 0;
-    }
-    
     .section h2 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
     
-    .publication-content {
-        line-height: 1.6;
+    .publication-meta {
+        margin-left: 1.2rem;
+        font-size: 0.85em;
     }
     
-    .publication-number {
-        display: inline-block;
-        margin-right: 0.3rem;
+    .publication-abstract {
+        margin-left: 1.2rem;
+        padding: 0.7rem;
+        font-size: 0.85em;
     }
-}
-
-// 确保所有内容在一行显示（防止换行）
-.publication-content {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-// 但允许小屏幕换行
-@media screen and (max-width: 968px) {
-    .publication-content {
+    
+    .no-publications {
+        margin-left: 1.2rem;
+    }
+    
+    // 在小屏幕上确保标题和作者正确换行
+    .publication-header {
         white-space: normal;
-        overflow: visible;
-        text-overflow: clip;
     }
+    
+    .publication-title,
+    .publication-authors {
+        display: inline;
+        white-space: normal;
+    }
+}
+
+// 确保内容正确换行
+.publication-header {
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.publication-meta {
+    white-space: normal;
+    word-wrap: break-word;
 }
 
 // 打印样式
@@ -335,11 +371,16 @@ footer {
     .publication-abstract {
         display: block !important;
         border: 1px solid #ccc;
-        background: white;
+        background: none;
+        margin-left: 1.8rem;
     }
     
-    .publication-links a {
+    a {
         color: #000;
-        border-bottom: 1px solid #000;
+        text-decoration: underline;
+    }
+    
+    .publication-meta {
+        margin-left: 1.8rem;
     }
 }

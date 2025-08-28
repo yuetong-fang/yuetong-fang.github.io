@@ -10,18 +10,20 @@ title: Research
 {% if preprints.size > 0 %}
 {% for paper in preprints %}
 <div class="publication-item">
-    <div class="publication-content">
+    <div class="publication-header">
         <span class="publication-number">{{ forloop.length | minus: forloop.index0 }}.</span>
         <span class="publication-title">{{ paper.title }}</span>
         {% if paper.authors != "Y. Fang" and paper.authors != "Fang, Y." %}
         <span class="publication-authors"> with {{ paper.authors | remove: "Fang, Y., " | remove: ", Fang, Y." | remove: "Y. Fang, " | remove: ", Y. Fang" }}</span>
         {% endif %}
-        <span class="publication-meta">, {{ paper.archive }}, {{ paper.year }}</span>
+    </div>
+    <div class="publication-meta">
+        <span class="publication-info">{{ paper.archive }}, {{ paper.year }}</span>
         {% if paper.arxiv %}
-        <span class="publication-links"> [<a href="https://arxiv.org/abs/{{ paper.arxiv }}" target="_blank">arXiv</a>]</span>
+        <span class="publication-links">[<a href="https://arxiv.org/abs/{{ paper.arxiv }}" target="_blank">arXiv</a>]</span>
         {% endif %}
         {% if paper.abstract %}
-        <span class="publication-links"> [<button class="abstract-toggle" data-target="abstract-preprint-{{ forloop.index }}">Abstract</button>]</span>
+        <span class="publication-links">[<button class="abstract-toggle" data-target="abstract-preprint-{{ forloop.index }}">Abstract</button>]</span>
         {% endif %}
     </div>
     {% if paper.abstract %}
@@ -36,26 +38,27 @@ title: Research
 
 <section class="section">
 <h2 class="section-title">Publications</h2>
-
 {% assign journal_papers = site.data.publications | where: "type", "journal" | sort: "year" | reverse %}
 {% if journal_papers.size > 0 %}
 {% for paper in journal_papers %}
 <div class="publication-item">
-    <div class="publication-content">
+    <div class="publication-header">
         <span class="publication-number">{{ forloop.length | minus: forloop.index0 }}.</span>
         <span class="publication-title">{{ paper.title }}</span>
         {% if paper.authors != "Y. Fang" and paper.authors != "Fang, Y." %}
         <span class="publication-authors"> with {{ paper.authors | remove: "Fang, Y., " | remove: ", Fang, Y." | remove: "Y. Fang, " | remove: ", Y. Fang" }}</span>
         {% endif %}
-        <span class="publication-meta">, {{ paper.journal }}, {{ paper.year }}{% if paper.volume %}, Vol. {{ paper.volume }}{% endif %}{% if paper.issue %}, No. {{ paper.issue }}{% endif %}{% if paper.pages %}, pp. {{ paper.pages }}{% endif %}</span>
+    </div>
+    <div class="publication-meta">
+        <span class="publication-info">{{ paper.journal }}, {{ paper.year }}{% if paper.volume %}, Vol. {{ paper.volume }}{% endif %}{% if paper.issue %}, No. {{ paper.issue }}{% endif %}{% if paper.pages %}, pp. {{ paper.pages }}{% endif %}</span>
         {% if paper.doi %}
-        <span class="publication-links"> [<a href="https://doi.org/{{ paper.doi }}" target="_blank">DOI</a>]</span>
+        <span class="publication-links">[<a href="https://doi.org/{{ paper.doi }}" target="_blank">DOI</a>]</span>
         {% endif %}
         {% if paper.code %}
-        <span class="publication-links"> [<a href="{{ paper.code }}" target="_blank">Code</a>]</span>
+        <span class="publication-links">[<a href="{{ paper.code }}" target="_blank">Code</a>]</span>
         {% endif %}
         {% if paper.abstract %}
-        <span class="publication-links"> [<button class="abstract-toggle" data-target="abstract-{{ forloop.index }}">Abstract</button>]</span>
+        <span class="publication-links">[<button class="abstract-toggle" data-target="abstract-{{ forloop.index }}">Abstract</button>]</span>
         {% endif %}
     </div>
     {% if paper.abstract %}

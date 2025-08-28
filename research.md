@@ -3,20 +3,8 @@ layout: default
 title: Research
 ---
 
-## Research Interests
-
-Machine Learning, Computer Vision, Natural Language Processing, Artificial Intelligence, Deep Learning Architectures
-
-## Research Projects
-
-**Image Segmentation with Deep Learning** (2021-2023 | Funded by NSF)  
-Developing novel deep learning architectures for semantic image segmentation that outperform existing methods.
-
-**Efficient Transformer Models** (2020-2022 | Funded by Google Research)  
-Designing transformer-based models that achieve state-of-the-art performance on NLP tasks with improved efficiency.
-
 <section class="section">
-## Preprints
+<h2 class="section-title">Preprints                                                                   </h2>
 
 {% assign preprints = site.data.publications | where: "type", "preprint" | sort: "year" | reverse %}
 {% if preprints.size > 0 %}
@@ -51,7 +39,7 @@ Designing transformer-based models that achieve state-of-the-art performance on 
 </section>
 
 <section class="section">
-## Publications
+<h2 class="section-title">Publications</h2>
 
 {% assign journal_papers = site.data.publications | where: "type", "journal" | sort: "year" | reverse %}
 {% if journal_papers.size > 0 %}

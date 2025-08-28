@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Research
+title: "Research"
 ---
 
 <section class="section">

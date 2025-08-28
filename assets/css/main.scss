@@ -387,10 +387,6 @@ a:hover {
     }
 }
 
-// 确保紫色下划线在所有状态下都保持最大宽度
-.section h2::after {
-    transition: none !important; // 禁止动画影响下划线
-}
 
 // 打印样式
 @media print {
@@ -422,10 +418,6 @@ a:hover {
         text-decoration: underline;
     }
     
-    .section h2::after {
-        left: -1rem;
-        right: -1rem;
-    }
 }
 
 // 确保布局稳定性

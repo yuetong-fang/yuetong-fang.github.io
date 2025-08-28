@@ -170,7 +170,7 @@ footer {
 
 }
 
-// Research页面样式
+// Research页面样式 - 固定边距
 .research-page {
     max-width: 900px;
     margin: 0 auto;
@@ -180,7 +180,14 @@ footer {
     font-size: 15px;
 }
 
-// Section样式
+// 固定边距容器
+.page-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem; // 固定左右边距
+}
+
+// Section样式 - 紫色下划线延伸到最大边距
 .section {
     margin: 2.5rem 0;
 }
@@ -192,9 +199,15 @@ footer {
     padding-bottom: 0.5rem;
     border-bottom: 2px solid #6a1b9a;
     color: #333;
+    
+    // 延伸到最大边距
+    margin-left: -2rem;
+    margin-right: -2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
-// 出版物项目 - 块级元素确保正确布局
+// 出版物项目 - 使用固定边距
 .publication-item {
     margin-bottom: 1rem;
     padding: 0.8rem 0;
@@ -215,11 +228,11 @@ footer {
 }
 
 .publication-title {
-    font-weight: 800; // 加粗
-    font-size: 1.10em; // 加大字号
+    font-weight: 600;
+    font-size: 1.05em;
     color: #333;
     display: inline;
-    text-align: left; // 确保左对齐
+    text-align: left;
 }
 
 .publication-authors {
@@ -228,14 +241,14 @@ footer {
     display: inline;
 }
 
-// 第二行：元信息和链接
+// 第二行：元信息和链接 - 与标题左对齐
 .publication-meta {
     display: block;
     color: #666;
     font-size: 0.9em;
     margin-left: 1.8rem; // 与编号对齐
     line-height: 1.4;
-    text-align: left; // 确保左对齐
+    text-align: left;
 }
 
 .publication-info {
@@ -275,21 +288,20 @@ footer {
     color: #4a148c;
 }
 
-// Abstract内容 - 显示在文章下方，影响布局
+// Abstract内容
 .publication-abstract {
     background: #f8f9fa;
     padding: 0.8rem 1rem;
-    margin: 0.5rem 0 0 1.8rem; // 与元信息对齐
+    margin: 0.5rem 0 0 1.8rem;
     border-left: 3px solid #6a1b9a;
     border-radius: 0 3px 3px 0;
     font-size: 0.9em;
     line-height: 1.5;
     color: #555;
-    display: none; // 默认隐藏
-    text-align: left; // 确保左对齐
+    display: none;
+    text-align: left;
 }
 
-// 当abstract显示时，正常占据空间
 .publication-abstract[style*="block"] {
     display: block;
 }
@@ -319,18 +331,21 @@ a:hover {
 
 // 响应式设计
 @media screen and (max-width: 768px) {
-    .research-page {
-        padding: 0 1.5rem;
-        font-size: 14px;
+    .page-container {
+        padding: 0 1.5rem; // 移动端边距
     }
     
     .section h2 {
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
         font-size: 1.4rem;
     }
     
     .publication-title {
-        font-size: 1em; // 移动端恢复正常字号
-        font-weight: 600; // 保持加粗
+        font-size: 1em;
+        font-weight: 600;
     }
     
     .publication-meta {
@@ -347,39 +362,19 @@ a:hover {
     .no-publications {
         margin-left: 1.2rem;
     }
-    
-    // 在小屏幕上确保标题和作者正确换行
-    .publication-header {
-        white-space: normal;
-    }
-    
-    .publication-title,
-    .publication-authors {
-        display: inline;
-        white-space: normal;
-    }
 }
 
-// 确保内容正确换行和左对齐
-.publication-header {
-    white-space: normal;
-    word-wrap: break-word;
-    text-align: left;
-}
-
-.publication-meta {
-    white-space: normal;
-    word-wrap: break-word;
-    text-align: left;
-}
-
-// 特别确保标题左对齐
-.publication-item {
-    text-align: left;
+// 确保所有内容在固定边距内
+.research-content {
+    padding: 0 2rem;
 }
 
 // 打印样式
 @media print {
+    .page-container {
+        padding: 0 1rem;
+    }
+    
     .abstract-toggle {
         display: none;
     }
@@ -400,21 +395,16 @@ a:hover {
         color: #000;
         text-decoration: underline;
     }
-    
-    .publication-meta {
-        margin-left: 1.8rem;
-    }
 }
 
-// 确保所有元素左对齐
-.publication-item > * {
-    text-align: left;
+// 确保标题延伸到边距最左边
+.publication-header {
+    padding-right: 2rem; // 保持右边距一致
 }
 
-// 标题特殊样式 - 更明显的左对齐和加粗
-.publication-title {
-    font-weight: 600 !important;
-    font-size: 1.05em !important;
-    text-align: left !important;
-    display: inline !important;
+// 特别确保section标题紫色下划线延伸到最大边距
+.section h2 {
+    background: linear-gradient(to right, #6a1b9a 0%, #6a1b9a 100%) bottom left no-repeat;
+    background-size: 100% 2px;
+    border-bottom: none;
 }

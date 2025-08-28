@@ -180,24 +180,32 @@ footer {
     font-size: 14px;
 }
 
-// Section样式 - 固定位置
-.publication-section {
-    margin: 2rem 0;
+// Section样式 - 紫色下划线
+.section {
+    margin: 2.5rem 0;
     position: relative;
 }
 
-.publication-section h2 {
-    font-size: 1.3rem;
+.section h2 {
+    font-size: 1.4rem;
     font-weight: bold;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 0.3rem;
-    position: sticky;
-    top: 0;
-    background: white;
-    z-index: 10;
-    padding-top: 0.5rem;
-    margin-top: -0.5rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #6a1b9a; // 紫色下划线
+    position: relative;
+    width: 100%;
+}
+
+// 确保下划线延伸到最大宽度
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #6a1b9a 0%, #6a1b9a 10%, transparent 10%, transparent 100%);
+    pointer-events: none;
 }
 
 // 出版物列表容器
@@ -205,31 +213,27 @@ footer {
     position: relative;
 }
 
-// 出版物项目 - 使用表格式布局确保位置固定
+// 出版物项目 - 使用flex布局确保位置正确
 .publication-item {
-    display: table;
-    width: 100%;
+    display: flex;
     margin-bottom: 0.8rem;
     position: relative;
+    align-items: flex-start;
 }
 
-// 编号单元格 - 绝对固定位置
+// 编号 - 固定宽度
 .publication-number {
-    display: table-cell;
-    vertical-align: top;
-    width: 25px;
-    min-width: 25px;
-    padding-right: 8px;
+    flex: 0 0 25px;
     font-weight: normal;
     text-align: right;
-    position: relative;
+    padding-right: 8px;
+    min-width: 25px;
 }
 
-// 主内容单元格
+// 主内容 - 自动扩展
 .publication-main {
-    display: table-cell;
-    vertical-align: top;
-    width: auto;
+    flex: 1;
+    min-width: 0; // 防止内容溢出
 }
 
 // 所有内容在一行显示
@@ -282,24 +286,30 @@ footer {
     color: #004499;
 }
 
-// Abstract样式 - 固定在主内容下方，自动换行
+// Abstract容器 - 确保正确布局
+.publication-abstract-container {
+    flex: 1 0 100%; // 占据整行
+    margin-left: 25px; // 与编号对齐
+    margin-top: 0.5rem;
+    order: 3; // 确保在主要内容之后
+}
+
+// Abstract样式 - 自动换行
 .publication-abstract {
-    display: table-cell;
-    vertical-align: top;
-    padding-top: 0.5rem;
     color: #444;
     font-style: normal;
     border-top: 1px dashed #ddd;
+    padding-top: 0.5rem;
     width: 100%;
     word-wrap: break-word;
     white-space: normal;
     line-height: 1.5;
+    display: none; // 默认隐藏
 }
 
-// 确保abstract单元格占据整行
-.publication-item.with-abstract {
-    display: table;
-    width: 100%;
+// 当有abstract时调整布局
+.publication-item.has-abstract {
+    flex-wrap: wrap; // 允许换行
 }
 
 // 无内容时的样式
@@ -307,8 +317,7 @@ footer {
     font-style: italic;
     color: #666;
     padding: 0.5rem 0;
-    display: table-cell;
-    padding-left: 25px;
+    margin-left: 25px;
 }
 
 // 响应式设计
@@ -319,37 +328,34 @@ footer {
     }
     
     .publication-item {
-        display: block;
+        flex-direction: column;
     }
     
     .publication-number {
-        display: block;
-        width: auto;
+        flex: 0 0 auto;
         text-align: left;
         margin-bottom: 0.2rem;
         padding-right: 0;
     }
     
-    .publication-main {
-        display: block;
+    .publication-abstract-container {
+        margin-left: 0;
         width: 100%;
-    }
-    
-    .publication-abstract {
-        display: block;
-        width: 100%;
-        padding-left: 0;
     }
     
     .no-publications {
-        display: block;
-        padding-left: 0;
+        margin-left: 0;
     }
     
-    .publication-section h2 {
-        position: relative;
-        top: 0;
+    .section h2 {
+        font-size: 1.3rem;
     }
+}
+
+// 确保所有section标题的紫色下划线长度一致
+.section h2 {
+    display: block;
+    width: 100%;
 }
 
 // 打印样式
@@ -361,5 +367,9 @@ footer {
     .publication-abstract {
         display: block !important;
         border-top: 1px solid #ccc;
+    }
+    
+    .section h2 {
+        border-bottom: 2px solid #6a1b9a;
     }
 }

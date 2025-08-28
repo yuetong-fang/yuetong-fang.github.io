@@ -1,7 +1,5 @@
 <nav class="navbar">
     <div class="nav-container">
-        <div class="logo-placeholder"></div> 
-        
         <ul class="nav-menu">
             {% for item in site.data.navigation %}
             <li class="nav-item">
@@ -29,6 +27,16 @@
             hamburger.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
                 hamburger.classList.toggle('active');
+                
+                // 切换汉堡菜单图标
+                const icon = hamburger.querySelector('i');
+                if (hamburger.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             });
             
             // Close menu when clicking on nav items
@@ -36,6 +44,11 @@
                 item.addEventListener('click', () => {
                     navMenu.classList.remove('active');
                     hamburger.classList.remove('active');
+                    
+                    // 重置汉堡菜单图标
+                    const icon = hamburger.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
                 });
             });
         }

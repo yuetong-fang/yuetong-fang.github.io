@@ -7,9 +7,12 @@ $text-color: #333;
 $background-color: #fff;
 
 // Navigation colors - 增加对比度
-$nav-text-color: #ffffff; // 白色文字，提高对比度
-$nav-hover-color: #ffcc80; // 悬停时的琥珀色
-$nav-active-color: #ffcc80; // 活动页面的琥珀色
+$primary-color: #6a1b9a;
+$nav-text-color: #ffffff;
+$nav-hover-color: #ffcc80;      // 黄色
+$nav-active-color: #ffcc80;     // 黄色
+$nav-visited-color: #bbdefb;    // 浅蓝色
+
 
 // Spacing variables
 $spacing: 1rem;

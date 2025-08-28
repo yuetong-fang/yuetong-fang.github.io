@@ -200,7 +200,7 @@ footer {
     padding: 0.8rem 0;
 }
 
-// 第一行：标题和作者
+// 第一行：标题和作者 - 标题左对齐、加大加粗
 .publication-header {
     display: block;
     margin-bottom: 0.3rem;
@@ -215,9 +215,11 @@ footer {
 }
 
 .publication-title {
-    font-weight: 500;
+    font-weight: 600; // 加粗
+    font-size: 1.05em; // 加大字号
     color: #333;
     display: inline;
+    text-align: left; // 确保左对齐
 }
 
 .publication-authors {
@@ -233,6 +235,7 @@ footer {
     font-size: 0.9em;
     margin-left: 1.8rem; // 与编号对齐
     line-height: 1.4;
+    text-align: left; // 确保左对齐
 }
 
 .publication-info {
@@ -283,6 +286,7 @@ footer {
     line-height: 1.5;
     color: #555;
     display: none; // 默认隐藏
+    text-align: left; // 确保左对齐
 }
 
 // 当abstract显示时，正常占据空间
@@ -324,6 +328,11 @@ a:hover {
         font-size: 1.4rem;
     }
     
+    .publication-title {
+        font-size: 1em; // 移动端恢复正常字号
+        font-weight: 600; // 保持加粗
+    }
+    
     .publication-meta {
         margin-left: 1.2rem;
         font-size: 0.85em;
@@ -351,15 +360,22 @@ a:hover {
     }
 }
 
-// 确保内容正确换行
+// 确保内容正确换行和左对齐
 .publication-header {
     white-space: normal;
     word-wrap: break-word;
+    text-align: left;
 }
 
 .publication-meta {
     white-space: normal;
     word-wrap: break-word;
+    text-align: left;
+}
+
+// 特别确保标题左对齐
+.publication-item {
+    text-align: left;
 }
 
 // 打印样式
@@ -375,6 +391,11 @@ a:hover {
         margin-left: 1.8rem;
     }
     
+    .publication-title {
+        font-weight: 600;
+        font-size: 1.05em;
+    }
+    
     a {
         color: #000;
         text-decoration: underline;
@@ -383,4 +404,17 @@ a:hover {
     .publication-meta {
         margin-left: 1.8rem;
     }
+}
+
+// 确保所有元素左对齐
+.publication-item > * {
+    text-align: left;
+}
+
+// 标题特殊样式 - 更明显的左对齐和加粗
+.publication-title {
+    font-weight: 600 !important;
+    font-size: 1.05em !important;
+    text-align: left !important;
+    display: inline !important;
 }

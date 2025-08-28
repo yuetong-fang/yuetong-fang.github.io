@@ -187,19 +187,20 @@ footer {
     padding: 0 2rem; // 固定左右边距
 }
 
-// Section样式 - 紫色下划线始终最大宽度
+// Section样式
 .section {
     margin: 2.5rem 0;
     position: relative;
 }
 
 .section h2 {
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    color: #333;
-    position: relative;
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        font-size: 1.4rem;
+    }
+    
     
 
 // 出版物项目 - 使用固定边距

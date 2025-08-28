@@ -4,7 +4,7 @@ title: Research
 ---
 
 <section class="section">
-<h2 class="section-title">Preprints                                                                   </h2>
+## Preprints
 
 {% assign preprints = site.data.publications | where: "type", "preprint" | sort: "year" | reverse %}
 {% if preprints.size > 0 %}
@@ -27,7 +27,9 @@ title: Research
         {% endif %}
     </div>
     {% if paper.abstract %}
-    <div class="publication-abstract" id="abstract-preprint-{{ forloop.index }}">{{ paper.abstract }}</div>
+    <div class="publication-abstract-container">
+        <div class="publication-abstract" id="abstract-preprint-{{ forloop.index }}">{{ paper.abstract }}</div>
+    </div>
     {% endif %}
 </div>
 {% endfor %}
@@ -37,7 +39,8 @@ title: Research
 </section>
 
 <section class="section">
-<h2 class="section-title">Publications</h2>
+## Publications
+
 {% assign journal_papers = site.data.publications | where: "type", "journal" | sort: "year" | reverse %}
 {% if journal_papers.size > 0 %}
 {% for paper in journal_papers %}
@@ -62,7 +65,9 @@ title: Research
         {% endif %}
     </div>
     {% if paper.abstract %}
-    <div class="publication-abstract" id="abstract-{{ forloop.index }}">{{ paper.abstract }}</div>
+    <div class="publication-abstract-container">
+        <div class="publication-abstract" id="abstract-{{ forloop.index }}">{{ paper.abstract }}</div>
+    </div>
     {% endif %}
 </div>
 {% endfor %}
@@ -75,24 +80,21 @@ title: Research
 document.addEventListener('DOMContentLoaded', function() {
     const abstractButtons = document.querySelectorAll('.abstract-toggle');
     
-    // 初始隐藏所有摘要
-    document.querySelectorAll('.publication-abstract').forEach(abstract => {
-        abstract.style.display = 'none';
-    });
-    
     abstractButtons.forEach(button => {
         button.addEventListener('click', function() {
             const targetId = this.getAttribute('data-target');
             const abstractDiv = document.getElementById(targetId);
             
             if (abstractDiv) {
-                const isVisible = abstractDiv.style.display !== 'none';
+                const isVisible = abstractDiv.classList.contains('open');
                 
                 if (isVisible) {
-                    abstractDiv.style.display = 'none';
+                    // 隐藏动画
+                    abstractDiv.classList.remove('open');
                     this.textContent = 'Abstract';
                 } else {
-                    abstractDiv.style.display = 'block';
+                    // 显示动画
+                    abstractDiv.classList.add('open');
                     this.textContent = 'Hide Abstract';
                 }
             }

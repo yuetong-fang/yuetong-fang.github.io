@@ -132,6 +132,11 @@ footer {
             font-weight: 500; // 增加字体粗细
         }
     }
+
+    .research-interests h3 {
+    color: $primary-dark;
+    margin-bottom: 1rem;
+    font-weight: 600 !important; /* 加粗 */}
 }
 
 // Responsive design
@@ -162,4 +167,5 @@ footer {
             }
         }
     }
+
 }

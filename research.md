@@ -1,36 +1,35 @@
 ---
 layout: default
-title: Research
+title: "Research"
 ---
 
 <section class="section">
-  <h3 class="section-title">Preprints</h3>
+  <h2 class="section-title">Preprints</h2>
 
 {% assign preprints = site.data.publications | where: "type", "preprint" | sort: "year" | reverse %}
 {% if preprints.size > 0 %}
+<div class="publication-list">
 {% for paper in preprints %}
 <div class="publication-item">
     <span class="publication-number">{{ forloop.length | minus: forloop.index0 }}.</span>
-    <div class="publication-content">
-        <div class="publication-main">
-            <span class="publication-title">{{ paper.title }}</span>
-            {% if paper.authors != "Y. Fang" and paper.authors != "Fang, Y." %}
-            <span class="publication-authors"> with {{ paper.authors | remove: "Fang, Y., " | remove: ", Fang, Y." | remove: "Y. Fang, " | remove: ", Y. Fang" }}</span>
-            {% endif %}
-            <span class="publication-meta">, {{ paper.archive }}, {{ paper.year }}</span>
-            {% if paper.arxiv %}
-            <span class="publication-links"> [<a href="https://arxiv.org/abs/{{ paper.arxiv }}" target="_blank">arXiv</a>]</span>
-            {% endif %}
-            {% if paper.abstract %}
-            <span class="publication-links"> [<button class="abstract-toggle" data-target="abstract-preprint-{{ forloop.index }}">Abstract</button>]</span>
-            {% endif %}
-        </div>
-        {% if paper.abstract %}
-        <div class="publication-abstract" id="abstract-preprint-{{ forloop.index }}">{{ paper.abstract }}</div>
+    <div class="publication-main">
+        <span class="publication-title">{{ paper.title }}</span>
+        {% if paper.authors != "Y. Fang" and paper.authors != "Fang, Y." %}
+        <span class="publication-authors"> with {{ paper.authors | remove: "Fang, Y., " | remove: ", Fang, Y." | remove: "Y. Fang, " | remove: ", Y. Fang" }}</span>
         {% endif %}
-    </div>
+        <span class="publication-meta">, {{ paper.archive }}, {{ paper.year }}</span>
+        {% if paper.arxiv %}
+        <span class="publication-links"> [<a href="https://arxiv.org/abs/{{ paper.arxiv }}" target="_blank">arXiv</a>]</span>
+        {% endif %}
+        {% if paper.abstract %}
+        <span class="publication-links"> [<button class="abstract-toggle" data-target="abstract-preprint-{{ forloop.index }}">Abstract</button>]</span>
+        {% endif %}   </div>
+    {% if paper.abstract %}
+    <div class="publication-abstract" id="abstract-preprint-{{ forloop.index }}">{{ paper.abstract }}</div>
+    {% endif %}
 </div>
 {% endfor %}
+</div>
 {% else %}
 <div class="no-publications">No preprints available at the moment.</div>
 {% endif %}

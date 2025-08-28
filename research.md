@@ -13,18 +13,10 @@ title: "Research"
             <div class="publication-item" id="preprint-{{ forloop.index }}">
                 <span class="publication-number">{{ forloop.length | minus: forloop.index0 }}.</span>
                 <div class="publication-details">
-                    <h3 class="publication-title">{{ paper.title }}</h3>
-                    <p class="publication-authors">{{ paper.authors }}</p>
-                    <p class="publication-meta">
+                    <p class="publication-title">{{ paper.title }}</p><p class="publication-authors">{{ paper.authors }}</p><p class="publication-meta">
                         <span class="publication-archive">{{ paper.archive }}</span>, 
-                        <span class="publication-year">{{ paper.year }}</span>
-                    </p>
+                        <span class="publication-year">{{ paper.year }}</span></p>
                     <div class="publication-links">
-                        {% if paper.pdf %}
-                        <a href="{{ paper.pdf }}" class="pub-link" target="_blank">
-                            <i class="fas fa-file-pdf"></i> PDF
-                        </a>
-                        {% endif %}
                         {% if paper.arxiv %}
                         <a href="https://arxiv.org/abs/{{ paper.arxiv }}" class="pub-link" target="_blank">
                             <i class="fas fa-external-link-alt"></i> arXiv
@@ -109,6 +101,8 @@ title: "Research"
             </div>
             {% endfor %}
         </div>
+        {% else %}
+        <p class="no-publication">No publications available at the moment.</p>
         {% endif %}
     </section>
 

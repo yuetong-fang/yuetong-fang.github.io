@@ -4,7 +4,8 @@ title: Research
 ---
 
 <section class="section">
-## Preprints
+<section class="section">
+    <h3 class="section-title">Preprints</h3>
 
 {% assign preprints = site.data.publications | where: "type", "preprint" | sort: "year" | reverse %}
 {% if preprints.size > 0 %}
@@ -39,7 +40,8 @@ title: Research
 </section>
 
 <section class="section">
-## Publications
+<section class="section">
+    <h3 class="section-title">Publications</h3>
 
 {% assign journal_papers = site.data.publications | where: "type", "journal" | sort: "year" | reverse %}
 {% if journal_papers.size > 0 %}

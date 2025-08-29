@@ -8,3 +8,37 @@
   abstract: "Let (X, omega) be a compact Hermitian manifold of dimension n. We show that all (omega ,m)-subharmonic functions are L^p-integrable on X, for any p < n /(n-m)."
 
 # 期刊文章 - Publications
+
+
+# 期刊文章
+- type: journal
+  title: "Deep Learning Approaches for Image Segmentation"
+  authors: "Y. Fang"
+  journal: "Journal of Artificial Intelligence"
+  year: 2023
+  volume: 15
+  issue: 2
+  pages: "123-145"
+  doi: "10.1000/xyz123"
+  abstract: "This paper presents a novel deep learning architecture for semantic image segmentation that outperforms existing methods on standard benchmarks. The proposed method achieves state-of-the-art performance on multiple datasets while maintaining computational efficiency."
+
+- type: journal
+  title: "Efficient Vision Transformers for Real-time Applications"
+  authors: "Y. Fang, Smith, J., Johnson, A."
+  journal: "IEEE Transactions on Pattern Analysis and Machine Intelligence"
+  year: 2022
+  volume: 44
+  issue: 5
+  pages: "2341-2355"
+  doi: "10.1000/xyz124"
+  code: "https://github.com/yfang/transformers"
+  abstract: "We propose an efficient vision transformer architecture that reduces computational complexity by 60% while maintaining competitive performance. The method incorporates spatial redundancy reduction and dynamic token selection to enable real-time deployment on resource-constrained devices."
+
+# 预印本
+- type: preprint
+  title: "Federated Learning for Medical Image Analysis"
+  authors: "Y. Fang, Anderson, K., Roberts, S."
+  archive: "arXiv preprint"
+  year: 2023
+  arxiv: "2303.12345"
+  abstract: "This work explores federated learning techniques for medical image analysis while preserving patient privacy. We develop a novel aggregation algorithm that improves convergence speed and model performance across distributed healthcare institutions with non-IID data distributions."

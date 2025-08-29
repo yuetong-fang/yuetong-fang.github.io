@@ -1,11 +1,10 @@
 ---
 layout: default
-title: "Research"
+title: Research
 ---
 
 <section class="section">
-<section class="section">
-    <h3 class="section-title">Preprints</h3>
+    <h2 class="section-title">Preprints</h2>
 
 {% assign preprints = site.data.publications | where: "type", "preprint" | sort: "year" | reverse %}
 {% if preprints.size > 0 %}
@@ -40,8 +39,7 @@ title: "Research"
 </section>
 
 <section class="section">
-<section class="section">
-    <h3 class="section-title">Publications</h3>
+    <h2 class="section-title">Publications</h2>
 
 {% assign journal_papers = site.data.publications | where: "type", "journal" | sort: "year" | reverse %}
 {% if journal_papers.size > 0 %}

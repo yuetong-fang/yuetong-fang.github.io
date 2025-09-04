@@ -25,6 +25,9 @@ title: Research
         {% if paper.abstract %}
         <span class="publication-links">[<button class="abstract-toggle" data-target="abstract-preprint-{{ forloop.index }}">Abstract</button>]</span>
         {% endif %}
+        {% if paper.status %}
+        <span class="publication-info">— {{ paper.status }}</span>
+        {% endif %}
     </div>
     {% if paper.abstract %}
     <div class="publication-abstract-container">

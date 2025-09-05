@@ -12,11 +12,10 @@ title: "Teaching"
 {% if courses.size > 0 %}
 {% for course in courses %}
 <div class="course-item">
-    <div class="course-header">
+    <div class="course-main">
+        <span class="course-bullet">•</span>
         <span class="course-title">{{ course.name }}</span>
-    </div>
-    <div class="course-meta">
-        <span class="course-info">
+        <span class="course-meta">
             {% if course.term %}{{ course.term }}{% if course.type or course.code %}, {% endif %}{% endif %}
             {% if course.type %}{{ course.type }}{% if course.code %} ({{ course.code }}){% endif %}{% endif %}
             {% if course.code and course.term == nil and course.type == nil %}({{ course.code }}){% endif %}
@@ -28,8 +27,5 @@ title: "Teaching"
 <div class="no-courses">No courses available at the moment.</div>
 {% endif %}
 </section>
-
-
-<section>
 
 

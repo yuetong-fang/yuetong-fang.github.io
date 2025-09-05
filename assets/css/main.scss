@@ -258,20 +258,20 @@ footer {
 }
 
 .publication-meta a {
-    color: #6a1b9a;
+    color: #2358ad;
     text-decoration: none;
 }
 
 .publication-meta a:hover {
     text-decoration: underline;
-    color: #4a148c;
+    color: #2358ad;
 }
 
 // Abstract按钮
 .abstract-toggle {
     background: none;
     border: none;
-    color: #6a1b9a;
+    color: #2358ad;
     text-decoration: none;
     cursor: pointer;
     padding: 0;
@@ -282,7 +282,7 @@ footer {
 
 .abstract-toggle:hover {
     text-decoration: underline;
-    color: #4a148c;
+    color: #2358ad;
 }
 
 // Abstract容器 - 固定边距，确保动画不影响布局
@@ -296,7 +296,7 @@ footer {
     background: #f8f9fa;
     padding: 0;
     margin: 0.5rem 0 0 0;
-    border-left: 3px solid #6a1b9a;
+    border-left: 3px solid #6194ec;
     border-radius: 0 3px 3px 0;
     font-size: 0.9em;
     line-height: 1.5;
@@ -330,13 +330,13 @@ footer {
 
 // 链接样式统一
 a {
-    color: #6a1b9a;
+    color: #2358ad;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 a:hover {
-    color: #4a148c;
+    color: #2358ad;
     text-decoration: underline;
 }
 
@@ -608,7 +608,7 @@ a:hover {
 
 // Event链接样式
 .event-link {
-    color: #6a1b9a;
+    color: #2358ad;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.2s ease;
@@ -616,7 +616,7 @@ a:hover {
 }
 
 .event-link:hover {
-    color: #4a148c;
+    color: #2358ad;
     text-decoration: underline;
 }
 
@@ -644,13 +644,13 @@ a:hover {
 
 // 确保链接颜色一致性
 .talk-meta a {
-    color: #6a1b9a;
+    color: #2358ad;
     text-decoration: none;
 }
 
 .talk-meta a:hover {
     text-decoration: underline;
-    color: #4a148c;
+    color: #2358ad;
 }
 
 

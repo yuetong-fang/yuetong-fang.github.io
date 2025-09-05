@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Others
 ---
 <div class="page-title">

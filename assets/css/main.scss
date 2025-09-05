@@ -484,3 +484,171 @@ a:hover {
     }
 }
 
+
+// Talks项目样式 - 与Publications保持一致
+.talk-item {
+    margin-bottom: 0.6rem;
+    padding: 0.6rem 0;
+    position: relative;
+}
+
+.talk-header {
+    display: block;
+    margin-bottom: 0.2rem;
+    line-height: 1.4;
+}
+
+.talk-date {
+    font-weight: 600;
+    margin-right: 0.8rem;
+    color: #6a1b9a;
+    display: inline;
+    font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-size: 0.95em;
+}
+
+.talk-title {
+    font-weight: 600;
+    font-size: 1.05em;
+    color: #333;
+    display: inline;
+    text-align: left;
+    font-style: italic;
+}
+
+.talk-meta {
+    display: block;
+    color: #666;
+    font-size: 0.9em;
+    margin-left: 6.5rem; // 与日期对齐
+    line-height: 1.3;
+    text-align: left;
+}
+
+.talk-info {
+    display: inline;
+    color: #666;
+}
+
+// 无Talks时的样式
+.no-talks {
+    font-style: italic;
+    color: #666;
+    padding: 0.8rem 0;
+    text-align: center;
+    background: #f8f9fa;
+    border-radius: 4px;
+    margin-left: 6.5rem;
+}
+
+// 响应式设计
+@media screen and (max-width: 768px) {
+    .talk-header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+    
+    .talk-date {
+        margin-right: 0;
+        margin-bottom: 0.2rem;
+        font-size: 0.9em;
+    }
+    
+    .talk-title {
+        font-size: 1em;
+    }
+    
+    .talk-meta {
+        margin-left: 0;
+        font-size: 0.85em;
+    }
+    
+    .no-talks {
+        margin-left: 0;
+        font-size: 0.9em;
+        padding: 0.7rem 0;
+    }
+}
+
+// 打印样式
+@media print {
+    .talk-item {
+        page-break-inside: avoid;
+        margin-bottom: 0.5rem;
+        padding: 0.4rem 0;
+    }
+    
+    .talk-date {
+        color: #000;
+        font-weight: 600;
+    }
+    
+    .talk-title {
+        font-weight: 600;
+    }
+}
+
+// 确保与Publications样式一致
+.talk-item {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.talk-title {
+    font-style: italic;
+}
+
+// 日期特殊样式
+.talk-date {
+    min-width: 6rem; // 确保日期有足够空间
+    display: inline-block;
+    vertical-align: top;
+}
+
+// Event链接样式
+.event-link {
+    color: #6a1b9a;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.event-link:hover {
+    color: #4a148c;
+    text-decoration: underline;
+}
+
+// 确保链接在打印时正常显示
+@media print {
+    .event-link {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    .event-link::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        opacity: 0.7;
+    }
+}
+
+// 响应式设计
+@media screen and (max-width: 768px) {
+    .event-link::after {
+        font-size: 0.75em;
+        margin-left: 0.15rem;
+    }
+}
+
+// 确保链接颜色一致性
+.talk-meta a {
+    color: #6a1b9a;
+    text-decoration: none;
+}
+
+.talk-meta a:hover {
+    text-decoration: underline;
+    color: #4a148c;
+}
+

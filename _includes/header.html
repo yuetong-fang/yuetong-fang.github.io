@@ -1,53 +1,131 @@
-<!-- 简单的导航栏结构，避免复杂嵌套 -->
 <nav class="navbar">
     <div class="nav-container">
         <ul class="nav-menu">
             {% for item in site.data.navigation %}
             <li class="nav-item">
                 <a href="{{ item.link | relative_url }}" 
-                   {% if page.url == item.link %}class="active-page"{% endif %}>
+                   {% if page.url == item.link %}class="active-page"{% endif %}
+                   data-page="{{ item.name | downcase }}">
                     {{ item.name }}
                 </a>
             </li>
             {% endfor %}
         </ul>
         
-        <button class="hamburger">
+        <button class="hamburger" aria-label="导航菜单" aria-expanded="false">
             <i class="fas fa-bars"></i>
         </button>
     </div>
+    
+    <!-- 菜单遮罩 -->
+    <div class="menu-overlay" aria-hidden="true"></div>
 </nav>
 
 <script>
-    // 简单的移动菜单功能
+    // 移动菜单功能 - 增强版
     document.addEventListener('DOMContentLoaded', function() {
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        const body = document.body;
         
-        if (hamburger && navMenu) {
+        // 切换菜单函数
+        function toggleMenu() {
+            const isOpening = !navMenu.classList.contains('active');
+            
+            navMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            body.classList.toggle('menu-open', isOpening);
+            hamburger.setAttribute('aria-expanded', isOpening);
+            
+            // 切换图标
+            const icon = hamburger.querySelector('i');
+            if (isOpening) {
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+            }
+        }
+        
+        // 汉堡菜单点击
+        if (hamburger) {
             hamburger.addEventListener('click', function(e) {
                 e.stopPropagation();
-                navMenu.classList.toggle('active');
-                
-                // 切换图标
-                const icon = this.querySelector('i');
+                toggleMenu();
+            });
+        }
+        
+        // 点击遮罩关闭菜单
+        if (menuOverlay) {
+            menuOverlay.addEventListener('click', function() {
                 if (navMenu.classList.contains('active')) {
-                    icon.classList.replace('fa-bars', 'fa-times');
-                } else {
-                    icon.classList.replace('fa-times', 'fa-bars');
+                    toggleMenu();
                 }
             });
             
-            // 点击其他地方关闭菜单
-            document.addEventListener('click', function(e) {
-                if (navMenu.classList.contains('active') && 
-                    !e.target.closest('.nav-menu') && 
-                    !e.target.closest('.hamburger')) {
-                    navMenu.classList.remove('active');
-                    const icon = hamburger.querySelector('i');
-                    icon.classList.replace('fa-times', 'fa-bars');
+            // 触摸滑动关闭（移动端）
+            menuOverlay.addEventListener('touchstart', function(e) {
+                this.startX = e.touches[0].clientX;
+            });
+            
+            menuOverlay.addEventListener('touchmove', function(e) {
+                if (this.startX && e.touches[0].clientX - this.startX > 50) {
+                    toggleMenu();
+                    this.startX = null;
                 }
             });
         }
+        
+        // 点击菜单项关闭菜单
+        document.querySelectorAll('.nav-item a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (navMenu.classList.contains('active')) {
+                    toggleMenu();
+                }
+                setTimeout(trackNavigationHistory, 100);
+            });
+        });
+        
+        // ESC键关闭菜单
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+        
+        // 导航历史追踪功能
+        function trackNavigationHistory() {
+            const navLinks = document.querySelectorAll('.nav-item a');
+            const currentPage = window.location.pathname;
+            
+            let visitedPages = JSON.parse(localStorage.getItem('navVisitedPages') || '{}');
+            
+            navLinks.forEach(link => {
+                const linkUrl = link.getAttribute('href');
+                if (currentPage === linkUrl || currentPage === linkUrl + '/') {
+                    link.classList.add('active-page');
+                    const pageName = link.getAttribute('data-page');
+                    if (pageName) {
+                        visitedPages[pageName] = true;
+                    }
+                } else {
+                    link.classList.remove('active-page');
+                }
+                
+                const pageName = link.getAttribute('data-page');
+                if (pageName && visitedPages[pageName] && !link.classList.contains('active-page')) {
+                    link.classList.add('visited-page');
+                } else {
+                    link.classList.remove('visited-page');
+                }
+            });
+            
+            localStorage.setItem('navVisitedPages', JSON.stringify(visitedPages));
+        }
+        
+        // 初始化导航历史
+        trackNavigationHistory();
+        window.addEventListener('pageshow', trackNavigationHistory);
     });
 </script>

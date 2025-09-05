@@ -513,6 +513,7 @@ a:hover {
     color: #333;
     display: inline;
     text-align: left;
+    font-style: normal
 }
 
 .talk-meta {
@@ -594,7 +595,7 @@ a:hover {
 }
 
 .talk-title {
-    font-style: italic;
+    font-style: normal;
 }
 
 // 日期特殊样式
@@ -654,25 +655,31 @@ a:hover {
 
 
 
-// Useful Links精简样式
+// Useful Links
 .link-list {
-    margin: 1rem 0;
+    margin: 1.5rem 0;
 }
 
 .link-item {
     margin-bottom: 0.8rem;
-    padding: 0.8rem;
-    background: #f8f9fa;
-    border-radius: 6px;
-    border-left: 3px solid #6a1b9a;
+    padding: 0.5rem 0;
+    position: relative;
     word-wrap: break-word;
     overflow-wrap: break-word;
+}
+
+.link-item::before {
+    content: "→";
+    color: #6a1b9a;
+    font-weight: 600;
+    margin-right: 0.8rem;
 }
 
 .link-name {
     font-weight: 600;
     color: #6a1b9a;
     text-decoration: none;
+    font-size: 1.05em;
 }
 
 .link-name:hover {
@@ -683,7 +690,7 @@ a:hover {
 .link-description {
     color: #666;
     font-size: 0.9em;
-    margin-left: 0.3rem;
+    margin-left: 0.5rem;
 }
 
 // 自动换行确保
@@ -695,13 +702,33 @@ a:hover {
 // 响应式设计
 @media screen and (max-width: 768px) {
     .link-item {
-        padding: 0.7rem;
         margin-bottom: 0.6rem;
+        padding: 0.4rem 0;
+    }
+    
+    .link-item::before {
+        margin-right: 0.5rem;
     }
     
     .link-description {
         display: block;
-        margin-left: 0;
+        margin-left: 1.8rem;
         margin-top: 0.2rem;
+    }
+}
+
+// 打印样式
+@media print {
+    .link-item::before {
+        color: #000;
+    }
+    
+    .link-name {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    .link-description {
+        color: #444;
     }
 }

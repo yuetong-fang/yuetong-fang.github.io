@@ -2,6 +2,10 @@
 layout: default
 title: Research
 ---
+<div class="page-title">
+    <h1>Research</h1>
+</div>
+
 
 <section class="section">
     <h3 class="section-title">Preprints</h3>

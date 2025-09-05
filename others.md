@@ -1,7 +1,10 @@
 ---
 layout: page
-title: "Others"
+title: Others
 ---
+<div class="page-title">
+    <h1>Others</h1>
+</div>
 
 <section class="section">
     <h3 class="section-title">Links</h3>

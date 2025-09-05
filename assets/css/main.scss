@@ -726,3 +726,88 @@ a:hover {
         padding: 0.2rem 0;
     }
 }
+
+// 页面标题居中样式
+.page-title {
+    text-align: center;
+    margin: 2rem 0 3rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #6a1b9a;
+    position: relative;
+}
+
+.page-title h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #6a1b9a, transparent);
+}
+
+// Research页面特殊标题样式
+.research-title {
+    text-align: center;
+    margin: 2rem 0 3rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #6a1b9a;
+    position: relative;
+}
+
+.research-title h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+.research-title::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #6a1b9a, transparent);
+}
+
+// 响应式设计
+@media screen and (max-width: 768px) {
+    .page-title,
+    .research-title {
+        margin: 1.5rem 0 2rem 0;
+        padding-bottom: 0.8rem;
+    }
+    
+    .page-title h1,
+    .research-title h1 {
+        font-size: 2rem;
+    }
+    
+    .page-title::after,
+    .research-title::after {
+        width: 80px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .page-title h1,
+    .research-title h1 {
+        font-size: 1.8rem;
+    }
+    
+    .page-title::after,
+    .research-title::after {
+        width: 60px;
+    }
+}

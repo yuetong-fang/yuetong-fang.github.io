@@ -2,6 +2,10 @@
 layout: default
 title: "Teaching"
 ---
+<div class="page-title">
+    <h1>Teachings</h1>
+</div>
+
 <section class="section">
     <h3 class="section-title">Current Teachings</h3>
 

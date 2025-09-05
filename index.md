@@ -1,8 +1,11 @@
 ---
 layout: home
-title: "Yuetong FANG"
+title: Yuetong FANG
 permalink: /
 ---
+<div class="page-title">
+    <h1>Yuetong FANG</h1>
+</div>
 
 <section class="section">
   <h2 class="section-title">Welcome!</h2>

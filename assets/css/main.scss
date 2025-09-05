@@ -671,20 +671,20 @@ a:hover {
 
 .link-item::before {
     content: "→";
-    color: #6a1b9a;
+    color: #2358ad;
     font-weight: 600;
     margin-right: 0.6rem; // 减少箭头间距
 }
 
 .link-name {
     font-weight: 600;
-    color: #6a1b9a;
+    color: #2358ad;
     text-decoration: none;
     font-size: 1.05em;
 }
 
 .link-name:hover {
-    color: #4a148c;
+    color: #2b69ce;
     text-decoration: underline;
 }
 

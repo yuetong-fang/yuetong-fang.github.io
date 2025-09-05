@@ -978,6 +978,15 @@ a:hover {
 }
 
 .about-text {
+    font-size: 1.3rem; // 加大字号
+    font-weight: 500;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 1.2rem;
+    text-align: justify;
+}
+
+.about-texta {
     font-size: 1.1rem; // 加大字号
     font-weight: 400;
     line-height: 1.7;

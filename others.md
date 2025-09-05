@@ -5,8 +5,19 @@ title: "Others"
 
 <section class="section">
     <h3 class="section-title">Links</h3>
-<a href="https://math.univ-angers.fr/seminaires/seminaires-systemes-dynamiques-et-geometrie/" target="_blank" class="text-link">Dynamical systems and Geometry Seminar in Angers</a>
-
-<a href="https://math.univ-angers.fr/seminaires/seminaire-de-geometrie-algebrique/" target="_blank" class="text-link">Topology and Algebraic geometry Seminar in Angers</a>
-
-<a href="https://math.univ-angers.fr/seminaires/seminaire-de-geometrie-algebrique/" target="_blank" class="text-link">Topology and Algebraic geometry Seminar in Angers</a>
+{% assign links = site.data.links %}
+{% if links.size > 0 %}
+<div class="link-list">
+    {% for link in links %}
+    <div class="link-item">
+        <a href="{{ link.url }}" target="_blank" class="link-name">{{ link.name }}</a>
+        {% if link.description %}
+        <span class="link-description">— {{ link.description }}</span>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="no-links">No links available at the moment.</div>
+{% endif %}
+</section>

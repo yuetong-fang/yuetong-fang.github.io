@@ -508,12 +508,11 @@ a:hover {
 }
 
 .talk-title {
-    font-weight: 800;
+    font-weight: 600;
     font-size: 1.05em;
     color: #333;
     display: inline;
     text-align: left;
-    font-style: italic;
 }
 
 .talk-meta {
@@ -653,3 +652,56 @@ a:hover {
     color: #4a148c;
 }
 
+
+
+// Useful Links精简样式
+.link-list {
+    margin: 1rem 0;
+}
+
+.link-item {
+    margin-bottom: 0.8rem;
+    padding: 0.8rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border-left: 3px solid #6a1b9a;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.link-name {
+    font-weight: 600;
+    color: #6a1b9a;
+    text-decoration: none;
+}
+
+.link-name:hover {
+    color: #4a148c;
+    text-decoration: underline;
+}
+
+.link-description {
+    color: #666;
+    font-size: 0.9em;
+    margin-left: 0.3rem;
+}
+
+// 自动换行确保
+.link-item {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+// 响应式设计
+@media screen and (max-width: 768px) {
+    .link-item {
+        padding: 0.7rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .link-description {
+        display: block;
+        margin-left: 0;
+        margin-top: 0.2rem;
+    }
+}

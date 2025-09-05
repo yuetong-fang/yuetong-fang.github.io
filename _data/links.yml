@@ -9,3 +9,10 @@
 
 - name: "Centre Henri Lebesgue"
   url: "https://www.lebesgue.fr/fr"
+
+- name: "Geometry and Tacos"
+  url: "https://sites.google.com/view/geometry-and-tacos/home-page"
+  description: "Online session on the Geometry and Topology of (Almost) Complex Structures"
+
+- name: "Geco Gedi"
+  url: "https://gecogedi.dimai.unifi.it/"

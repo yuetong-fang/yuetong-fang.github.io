@@ -657,22 +657,23 @@ a:hover {
 
 // Useful Links
 .link-list {
-    margin: 1.5rem 0;
+    margin: 1rem 0; // 减少外边距
 }
 
 .link-item {
-    margin-bottom: 0.8rem;
-    padding: 0.5rem 0;
+    margin-bottom: 0.4rem; // 减少行距（原0.8rem）
+    padding: 0.3rem 0; // 减少内边距（原0.5rem）
     position: relative;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    line-height: 1.3; // 减少行高
 }
 
 .link-item::before {
     content: "→";
     color: #6a1b9a;
     font-weight: 600;
-    margin-right: 0.8rem;
+    margin-right: 0.6rem; // 减少箭头间距
 }
 
 .link-name {
@@ -690,45 +691,38 @@ a:hover {
 .link-description {
     color: #666;
     font-size: 0.9em;
-    margin-left: 0.5rem;
-}
-
-// 自动换行确保
-.link-item {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    margin-left: 0.3rem; // 减少描述间距
+    line-height: 1.3; // 减少描述行高
 }
 
 // 响应式设计
 @media screen and (max-width: 768px) {
+    .link-list {
+        margin: 0.8rem 0;
+    }
+    
     .link-item {
-        margin-bottom: 0.6rem;
-        padding: 0.4rem 0;
+        margin-bottom: 0.3rem;
+        padding: 0.2rem 0;
+        line-height: 1.2;
     }
     
     .link-item::before {
-        margin-right: 0.5rem;
+        margin-right: 0.4rem;
     }
     
     .link-description {
         display: block;
-        margin-left: 1.8rem;
-        margin-top: 0.2rem;
+        margin-left: 1.5rem; // 调整移动端缩进
+        margin-top: 0.1rem;
+        line-height: 1.2;
     }
 }
 
 // 打印样式
 @media print {
-    .link-item::before {
-        color: #000;
-    }
-    
-    .link-name {
-        color: #000;
-        text-decoration: underline;
-    }
-    
-    .link-description {
-        color: #444;
+    .link-item {
+        margin-bottom: 0.3rem;
+        padding: 0.2rem 0;
     }
 }

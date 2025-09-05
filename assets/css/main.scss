@@ -508,7 +508,7 @@ a:hover {
 }
 
 .talk-title {
-    font-weight: 600;
+    font-weight: 800;
     font-size: 1.05em;
     color: #333;
     display: inline;
@@ -603,6 +603,7 @@ a:hover {
     min-width: 6rem; // 确保日期有足够空间
     display: inline-block;
     vertical-align: top;
+    color: #671997
 }
 
 // Event链接样式

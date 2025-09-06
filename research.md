@@ -45,7 +45,7 @@ title: Research
 {% endif %}
 </section>
 
-<section class="section">
+<!-- <section class="section">
     <h3 class="section-title">Publications</h3>
 
 {% assign journal_papers = site.data.publications | where: "type", "journal" | sort: "year" | reverse %}
@@ -81,7 +81,7 @@ title: Research
 {% else %}
 <div class="no-publications">No publications available at the moment.</div>
 {% endif %}
-</section>
+</section> -->
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

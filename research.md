@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Research
+last_modified: 2025-09-30
+
 ---
 <div class="page-title">
     <h1>Research</h1>

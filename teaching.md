@@ -1,6 +1,8 @@
 ---
 layout: default
 title: "Teaching"
+last_modified: 2025-09-06
+
 ---
 <div class="page-title">
     <h1>Teachings</h1>

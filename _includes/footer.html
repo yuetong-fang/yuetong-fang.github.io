@@ -1,7 +1,15 @@
 <footer>
     <div class="footer-content">
         <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title | escape }}. All Rights Reserved.</p>
-        <p>Last updated: <span id="last-modified">{{ site.time | date: '%B %d, %Y' }}</span></p>
+        <p>Last updated: 
+            <span class="last-modified">
+                {% if page.last_modified %}
+                    {{ page.last_modified | date: "%B %d, %Y" }}
+                {% else %}
+                    {{ site.time | date: "%B %d, %Y" }}
+                {% endif %}
+            </span>
+        </p>
     </div>
 </footer>
 

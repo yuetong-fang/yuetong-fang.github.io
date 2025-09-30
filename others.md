@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Others
+last_modified: 2025-09-06
+
 ---
 <div class="page-title">
     <h1>Others</h1>

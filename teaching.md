@@ -8,7 +8,7 @@ last_modified: 2025-09-06
     <h1>Teachings</h1>
 </div>
 
-<section class="section">
+<!-- <section class="section">
     <h3 class="section-title">Current Teachings</h3>
 {% assign courses = site.data.teaching | sort: "term" | reverse %}
 {% if courses.size > 0 %}
@@ -29,6 +29,21 @@ last_modified: 2025-09-06
 <div class="no-courses">No courses available at the moment.</div>
 {% endif %}
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</section>
+</section> -->
+
+<section class="section">
+<h3>Current Teachings</h3>
+
+<div class="course-item">
+    <div class="course-main">
+        <span class="course-bullet">•</span>
+        <span class="course-title">Algèbre élémentaire</span>
+        <span class="course-meta">CM+TD L1 MI4</span>
+        <div class="course-files">
+            <a href="\assets\Feuille 1-1b-corrigé.pdf" class="file-link file-pdf" target="_blank">Feuille TD 1,1b-corrigé</a>
+            <a href="assets\fiche_trigo.pdf" class="file-link file-pdf" target="_blank">Formules trigo</a>
+        </div>
+    </div>
+</div>
 
 

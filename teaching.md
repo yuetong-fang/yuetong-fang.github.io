@@ -32,7 +32,7 @@ last_modified: 2025-10-03
 </section> -->
 
 <section class="section">
-<h2>Current Teachings</h2>
+<h3 class="section-title">Current Teachings</h3>
 
 <div class="course-item">
     <div class="course-main">
@@ -40,8 +40,8 @@ last_modified: 2025-10-03
         <span class="course-title">Algèbre élémentaire</span>
         <span class="course-meta">CM+TD L1 MI4. &nbsp;&nbsp;  </span>
         <div class="course-files">
-            <a href="\assets\Feuille 1-1b-corrigé.pdf" class="file-link file-pdf" target="_blank">Feuille TD 1,1b-corrigé</a>
-            <a href="assets\fiche_trigo.pdf" class="file-link file-pdf" target="_blank">Formules trigos</a>
+            <a href="\assets\Feuille 1-1b-corrigé.pdf"  target="_blank">Feuille TD 1,1b-corrigé</a>
+            <a href="assets\fiche_trigo.pdf"  target="_blank">Formules trigos</a>
         </div>
     </div>
 </div>

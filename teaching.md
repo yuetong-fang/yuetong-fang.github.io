@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Teaching"
-last_modified: 2025-09-06
+last_modified: 2025-10-03
 
 ---
 <div class="page-title">
@@ -32,16 +32,16 @@ last_modified: 2025-09-06
 </section> -->
 
 <section class="section">
-<h3>Current Teachings</h3>
+<h2>Current Teachings</h2>
 
 <div class="course-item">
     <div class="course-main">
         <span class="course-bullet">•</span>
         <span class="course-title">Algèbre élémentaire</span>
-        <span class="course-meta">CM+TD L1 MI4</span>
+        <span class="course-meta">CM+TD L1 MI4. &nbsp;&nbsp;  </span>
         <div class="course-files">
             <a href="\assets\Feuille 1-1b-corrigé.pdf" class="file-link file-pdf" target="_blank">Feuille TD 1,1b-corrigé</a>
-            <a href="assets\fiche_trigo.pdf" class="file-link file-pdf" target="_blank">Formules trigo</a>
+            <a href="assets\fiche_trigo.pdf" class="file-link file-pdf" target="_blank">Formules trigos</a>
         </div>
     </div>
 </div>

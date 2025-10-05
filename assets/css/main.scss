@@ -948,13 +948,30 @@ a:hover {
     }
 }
 
+// 课程文件链接样式 - 与Publications一致
+.course-files {
+    display: inline;
+    margin-left: 0.5rem;
+}
 
-// 课程文件链接样式 - 同行显示
+.course-files a {
+    color: #6a1b9a;
+    text-decoration: none;
+    font-size: 0.9em;
+    margin: 0 0.1rem;
+}
+
+.course-files a:hover {
+    color: #4a148c;
+    text-decoration: underline;
+}
+
+// 确保课程主体布局正确
 .course-main {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.2rem;
 }
 
 .course-bullet {
@@ -978,73 +995,14 @@ a:hover {
     flex-shrink: 0;
 }
 
-.course-files {
-    display: flex;
-    gap: 0.5rem;
-    flex-shrink: 0;
-}
-
-.file-link {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.2rem 0.6rem;
-    background: #f8f9fa;
-    border: 1px solid #e9ecef;
-    border-radius: 3px;
-    color: #6a1b9a;
-    text-decoration: none;
-    font-size: 0.8em;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    white-space: nowrap;
-}
-
-.file-link:hover {
-    background: #6a1b9a;
-    color: white;
-    border-color: #6a1b9a;
-    transform: translateY(-1px);
-    box-shadow: 0 1px 3px rgba(106, 27, 154, 0.2);
-}
-
-// 文件类型图标
-.file-link::before {
-    content: "";
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin-right: 0.3rem;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.file-pdf::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236a1b9a'%3E%3Cpath d='M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z'/%3E%3C/svg%3E");
-}
-
-.file-zip::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236a1b9a'%3E%3Cpath d='M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-4 10h-2v2h-2v-2H9v-2h2v-2h2v2h2v2z'/%3E%3C/svg%3E");
-}
-
-.file-link:hover::before {
-    filter: brightness(0) invert(1);
-}
-
 // 响应式设计
 @media screen and (max-width: 968px) {
     .course-main {
-        gap: 0.4rem;
+        gap: 0.1rem;
     }
     
-    .file-link {
-        padding: 0.15rem 0.5rem;
-        font-size: 0.75em;
-    }
-    
-    .file-link::before {
-        width: 10px;
-        height: 10px;
-        margin-right: 0.25rem;
+    .course-files {
+        margin-left: 0.3rem;
     }
 }
 
@@ -1052,23 +1010,13 @@ a:hover {
     .course-main {
         align-items: flex-start;
         flex-direction: column;
-        gap: 0.3rem;
+        gap: 0.2rem;
     }
     
     .course-files {
         margin-left: 1.5rem;
-        flex-wrap: wrap;
-    }
-    
-    .file-link {
-        padding: 0.2rem 0.6rem;
-        font-size: 0.8em;
-    }
-    
-    .file-link::before {
-        width: 12px;
-        height: 12px;
-        margin-right: 0.3rem;
+        display: block;
+        margin-top: 0.2rem;
     }
 }
 

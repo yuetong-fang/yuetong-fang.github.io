@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Research
-last_modified: 2025-09-30
+last_modified: 2025-10-20
 
 ---
 <div class="page-title">

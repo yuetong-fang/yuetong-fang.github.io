@@ -189,25 +189,37 @@ footer {
 }
 
 // Section样式 - 紫色下划线始终最大宽度
+/* 彻底压缩所有间距 */
 .section {
-    margin: 2.5rem 0;
-    position: relative;
+    margin: 1rem 0 !important;
+    padding: 0 !important;
 }
 
-.section h2 {
+.section-title {
     font-size: 1.6rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
+    margin: 0 0 0.8rem 0 !important;
+    padding: 0 0 0.2rem 0 !important;
     color: #333;
-    position: relative;
-}    
+    border-bottom: 1px solid #eee; /* 可选：用边框替代padding */
+}
 
-// 出版物项目 - 减小底部间距
 .publication-item {
-    margin-bottom: 0.5rem; // 从1rem减小到0.5rem
-    padding: 0.5rem 0; // 从0.8rem减小到0.5rem
-    position: relative;
+    margin: 0 !important;
+    padding: 0.2rem 0 !important;
+    border: none !important;
+}
+
+.publication-header {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.1 !important;
+}
+
+.publication-meta {
+    margin: 0.05rem 0 0 1.8rem !important;
+    padding: 0 !important;
+    line-height: 1.1 !important;
 }
 
 // 第一行：标题和作者

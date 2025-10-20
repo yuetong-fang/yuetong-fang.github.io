@@ -203,18 +203,18 @@ footer {
     position: relative;
 }    
 
-// 出版物项目 - 使用固定边距
+// 出版物项目 - 减小底部间距
 .publication-item {
-    margin-bottom: 1rem;
-    padding: 0.8rem 0;
+    margin-bottom: 0.5rem; // 从1rem减小到0.5rem
+    padding: 0.5rem 0; // 从0.8rem减小到0.5rem
     position: relative;
 }
 
-// 第一行：标题和作者 - 调整行高
+// 第一行：标题和作者
 .publication-header {
     display: block;
-    margin-bottom: 0.2rem; // 减小底部边距
-    line-height: 1.3; // 从1.4减小到1.3
+    margin-bottom: 0.1rem; // 进一步减小
+    line-height: 1.3;
 }
 
 .publication-number {
@@ -230,26 +230,25 @@ footer {
     color: #333;
     display: inline;
     text-align: left;
-    line-height: 1.3; // 添加固定的行高
 }
 
 .publication-authors {
     color: #666;
     font-size: 0.95em;
     display: inline;
-    line-height: 1.3; // 添加固定的行高
 }
 
-// 第二行：元信息和链接
+// 第二行：元信息和链接 - 重点调整这里
 .publication-meta {
     display: block;
     color: #666;
     font-size: 0.95em;
     margin-left: 1.8rem;
-    line-height: 1.2; // 保持较小的行高
+    line-height: 1.2;
     text-align: left;
     font-weight: 550;
-    margin-top: 0.1rem; // 减小与标题行的间距
+    margin-bottom: 0; // 确保没有底部间距
+    padding-bottom: 0; // 确保没有内边距
 }
 
 .publication-info {
@@ -294,17 +293,18 @@ footer {
     color: #2358ad;
 }
 
-// Abstract容器 - 固定边距，确保动画不影响布局
+// Abstract容器 - 调整上边距
 .publication-abstract-container {
     overflow: hidden;
     margin-left: 1.8rem;
+    margin-top: 0.2rem; // 减小与meta行的间距
 }
 
-// Abstract内容 - 平滑动画
+// Abstract内容
 .publication-abstract {
     background: #f8f9fa;
     padding: 0;
-    margin: 0.5rem 0 0 0;
+    margin: 0.3rem 0 0 0; // 减小上边距
     border-left: 3px solid #6194ec;
     border-radius: 0 3px 3px 0;
     font-size: 0.9em;
@@ -319,18 +319,18 @@ footer {
 
 // Abstract展开状态
 .publication-abstract.open {
-    max-height: 500px; // 足够容纳大多数摘要
+    max-height: 500px;
     opacity: 1;
-    padding: 0.8rem 1rem;
+    padding: 0.6rem 1rem; // 减小内边距
     transform: translateY(0);
-    margin-top: 0.5rem;
+    margin-top: 0.3rem; // 减小上边距
 }
 
 // 无内容时的样式
 .no-publications {
     font-style: italic;
     color: #666;
-    padding: 1rem 0;
+    padding: 0.8rem 0; // 减小内边距
     text-align: center;
     background: #f8f9fa;
     border-radius: 4px;

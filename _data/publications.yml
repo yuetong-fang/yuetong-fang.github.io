@@ -6,9 +6,9 @@
   year: 2025
   arxiv: "2503.19678"
   abstract: >
-    Let $(X, \\omega)$ be a compact Hermitian manifold of dimension $n$. 
-    We show that all $(\\omega ,m)$-subharmonic functions are $L^p$-integrable 
-    on $X$, for any $ p < \\frac{n}{n-m}$.
+    Let $(X, \omega)$ be a compact Hermitian manifold of dimension $n$. 
+    We show that all $(\omega ,m)$-subharmonic functions are $L^p$-integrable 
+    on $X$, for any $ p < \frac{n}{n-m}$.
   status: "Accepted for publication in Ann. Polon. Math."
 
 - type: preprint
@@ -18,10 +18,10 @@
   year: 2025
   arxiv: "2510.14690"
   abstract: >
-    Let $(X,\\omega)$ be a compact Hermitian manifold of dimension $n$. 
-    We derive an $L^{\\infty}$-estimate for bounded solutions to the complex 
+    Let $(X,\omega)$ be a compact Hermitian manifold of dimension $n$. 
+    We derive an $L^{\infty}$-estimate for bounded solutions to the complex 
     $m$-th Hessian equations on $X$, assuming a positive right-hand side in 
-    the Orlicz space $L^{\\frac{n}{m}}(\\log L)^n(h\\circ\\log \\circ \\log L)^n$, 
+    the Orlicz space $L^{\frac{n}{m}}(\log L)^n(h\circ\log \circ \log L)^n$, 
     where the associated weight satisfies Kołodziej's Condition. Building upon 
     this estimate, we then establish the existence of continuous solutions to 
     the complex Hessian equation under the prescribed assumptions.

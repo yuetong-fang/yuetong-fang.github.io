@@ -15,7 +15,7 @@
   year: 2025
   arxiv: "2510.14690"
   abstract: "Let $(X,\\omega)$ be a compact Hermitian manifold of dimension $n$. We derive an $L^{\\infty}$-estimate for bounded solutions to the complex $m$-th Hessian equations on $X$, assuming a positive right-hand side in the Orlicz space $L^{\\frac{n}{m}}(\\log L)^n(h\\circ\\log \\circ \\log L)^n$, where the associated weight satisfies Kołodziej's Condition. Building upon this estimate, we then establish the existence of continuous solutions to the complex Hessian equation under the prescribed assumptions."
-  status: 
+  status: ~
 
 
 # 期刊文章 - Publications

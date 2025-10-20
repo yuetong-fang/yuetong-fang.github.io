@@ -1040,3 +1040,12 @@ a:hover {
         display: none;
     }
 }
+
+/* 紧急间距修复 */
+.section {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+.section-title {
+    margin-bottom: 0.8rem !important;
+}

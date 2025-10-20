@@ -1,20 +1,30 @@
 # 预印本 - Preprints
 - type: preprint
-  title: "Integrability of $(\\omega, m)$-subharmonic functions on compact Hermitian manifolds"                                   "
+  title: "Integrability of $(\\omega, m)$-subharmonic functions on compact Hermitian manifolds"
   authors: Y. Fang
   archive: "arXiv preprint"
   year: 2025
   arxiv: "2503.19678"
-  abstract: "Let $(X, \\omega)$ be a compact Hermitian manifold of dimension $n$. We show that all $(\\omega ,m)$-subharmonic functions are $L^p$-integrable on $X$, for any $ p < \\frac{n}{n-m}$."
-  status: Accepted for publication in Ann. Polon. Math.
+  abstract: >
+    Let $(X, \\omega)$ be a compact Hermitian manifold of dimension $n$. 
+    We show that all $(\\omega ,m)$-subharmonic functions are $L^p$-integrable 
+    on $X$, for any $ p < \\frac{n}{n-m}$.
+  status: "Accepted for publication in Ann. Polon. Math."
 
 - type: preprint
-  title: "Continuity of solutions to complex Hessian equations on compact Hermitian manifolds"                                  "
+  title: "Continuity of solutions to complex Hessian equations on compact Hermitian manifolds"
   authors: Y. Fang
   archive: "arXiv preprint"
   year: 2025
   arxiv: "2510.14690"
-  abstract: "Let $(X,\\omega)$ be a compact Hermitian manifold of dimension $n$. We derive an $L^{\\infty}$-estimate for bounded solutions to the complex $m$-th Hessian equations on $X$, assuming a positive right-hand side in the Orlicz space $L^{\\frac{n}{m}}(\\log L)^n(h\\circ\\log \\circ \\log L)^n$, where the associated weight satisfies Kołodziej's Condition. Building upon this estimate, we then establish the existence of continuous solutions to the complex Hessian equation under the prescribed assumptions."
+  abstract: >
+    Let $(X,\\omega)$ be a compact Hermitian manifold of dimension $n$. 
+    We derive an $L^{\\infty}$-estimate for bounded solutions to the complex 
+    $m$-th Hessian equations on $X$, assuming a positive right-hand side in 
+    the Orlicz space $L^{\\frac{n}{m}}(\\log L)^n(h\\circ\\log \\circ \\log L)^n$, 
+    where the associated weight satisfies Kołodziej's Condition. Building upon 
+    this estimate, we then establish the existence of continuous solutions to 
+    the complex Hessian equation under the prescribed assumptions.
   status: ~
 
 

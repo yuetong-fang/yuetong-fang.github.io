@@ -42,7 +42,7 @@ last_modified: 2025-12-01
         <div class="course-files">
             <a href="\assets\Feuille 1-1b-corrigé.pdf"  target="_blank">Feuille TD 1,1b-corrigé</a>
             <a href="assets\fiche_trigo.pdf"  target="_blank">Formules trigos, </a>
-            <a href="assets\Nombres complexes_corr.pdf"  target="_blank"> Nombres Complexes_corr</a>
+            <a href="assets\Nombre complexes_corr.pdf"  target="_blank"> Nombres Complexes_corr</a>
         </div>
     </div>
 </div>

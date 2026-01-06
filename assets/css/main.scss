@@ -496,19 +496,81 @@ a:hover {
 
 // Talks项目
 
-.section {
-    margin: 2.5rem 0;
-    position: relative;
+/* Talk 栏目样式 */
+.talk-item {
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
 }
 
-.section h2 {
-    font-size: 1.6rem;
+.talk-header {
+    display: flex;
+    align-items: flex-start; /* 顶部对齐 */
+    margin-bottom: 0.2rem;
+    gap: 0.8rem; /* 日期和标题之间的间距 */
+}
+
+/* 日期部分 - 固定宽度，不换行 */
+.talk-date-wrapper {
+    flex: 0 0 auto; /* 不伸缩，固定宽度 */
+    white-space: nowrap;
+}
+
+.talk-date {
+    color: #6a1b9a;
+    font-weight: 500;
+    font-size: 0.95em;
+}
+
+/* 标题部分 - 可伸缩，换行时对齐标题 */
+.talk-content-wrapper {
+    flex: 1; /* 占据剩余空间 */
+    min-width: 0; /* 重要：允许内容换行 */
+}
+
+.talk-title {
     font-weight: 600;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
     color: #333;
-    position: relative;
-}    
+    display: inline;
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* 标题换行时的缩进 */
+.talk-content-wrapper .talk-title {
+    display: inline-block;
+    width: 100%;
+}
+
+/* 第二行：活动信息 */
+.talk-meta {
+    margin-left: 5.5rem; /* 与标题开始位置对齐，根据日期宽度调整 */
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.3;
+}
+
+.talk-info {
+    color: #666;
+}
+
+.talk-info a {
+    color: #2358ad;
+    text-decoration: none;
+}
+
+.talk-info a:hover {
+    text-decoration: underline;
+}
+
+/* 无内容时的样式 */
+.no-talks {
+    font-style: italic;
+    color: #666;
+    padding: 1rem 0;
+    text-align: center;
+    background: #f8f9fa;
+    border-radius: 4px;
+} 
 
 // 出版物项目 - 使用固定边距
 .publication-item {

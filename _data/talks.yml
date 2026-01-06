@@ -4,14 +4,15 @@
   event: "Groupe de travail sur la $L^2$-cohomologie et l’homologie d’intersection"
   event_url: "https://math.univ-angers.fr/seminaires/groupe-de-travail-sur-la-l%c2%b2-cohomologie-et-lhomologie-dintersection/"
   location: "Angers, France"
-  date: "2025-02-17"
+  date: 2025-02-17
 
 - title: "An Introduction to the Complex Hessian Equation and Hermitian Geometry"
   event: "Séminaire des doctorant.es, Larema"
   location: "Angers, France"
-  date: "2025-07-03"
+  date: 2025-07-03
 
 - title: "Continuité des solutions des équations hessiennes complexes sur les variétés hermitiennes compactes"
   event: "Séminaires systèmes dynamiques et géométrie"
+  event_url: "https://math.univ-angers.fr/seminaires/seminaires-systemes-dynamiques-et-geometrie/"
   location: "Angers, France"
-  date: "2025-12-09"
+  date: 2025-12-09

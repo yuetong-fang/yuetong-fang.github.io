@@ -121,7 +121,10 @@ document.addEventListener('DOMContentLoaded', function() {
 {% for talk in talks %}
 <div class="talk-item">
     <div class="talk-header">
-        <span class="talk-date">[{{ talk.date | slice: 0, 7 | replace: "-", " " }}]</span>
+        <span class="talk-date">
+            {% assign talk_date = talk.date | split: "-" %}
+            [{{ talk_date[0] }} {{ talk_date[1] | plus: 0 | date: "%b" }}]
+        </span>
         <div class="talk-title-wrapper">
             <span class="talk-title">{{ talk.title }}</span>
         </div>

@@ -122,8 +122,23 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="talk-item">
     <div class="talk-header">
         <span class="talk-date">
-            {% assign talk_date = talk.date | split: "-" %}
-            [{{ talk_date[0] }} {{ talk_date[1] | plus: 0 | date: "%b" }}]
+            {% assign date_str = talk.date | string %}
+            {% assign year = date_str | slice: 0, 4 %}
+            {% assign month = date_str | slice: 5, 2 %}
+            {% if month == "01" %}[{{ year }} Jan]
+            {% elsif month == "02" %}[{{ year }} Feb]
+            {% elsif month == "03" %}[{{ year }} Mar]
+            {% elsif month == "04" %}[{{ year }} Apr]
+            {% elsif month == "05" %}[{{ year }} May]
+            {% elsif month == "06" %}[{{ year }} Jun]
+            {% elsif month == "07" %}[{{ year }} Jul]
+            {% elsif month == "08" %}[{{ year }} Aug]
+            {% elsif month == "09" %}[{{ year }} Sep]
+            {% elsif month == "10" %}[{{ year }} Oct]
+            {% elsif month == "11" %}[{{ year }} Nov]
+            {% elsif month == "12" %}[{{ year }} Dec]
+            {% else %}[{{ year }} {{ month }}]
+            {% endif %}
         </span>
         <div class="talk-title-wrapper">
             <span class="talk-title">{{ talk.title }}</span>

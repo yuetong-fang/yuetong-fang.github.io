@@ -35,6 +35,7 @@ last_modified: 2025-01-06
 <h3 class="section-title">Current Teachings</h3>
 I don't have teachings at the moment :D
 </div>
+<section class="section">
 <h3 class="section-title">Past Teachings</h3>
 <div class="course-item">
     <div class="course-main">

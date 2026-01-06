@@ -494,102 +494,70 @@ a:hover {
 }
 
 
-/* Talk 栏目样式 - 简化版，匹配现有HTML */
+/* Talk 栏目样式 - 简化版 */
 .talk-item {
     margin-bottom: 1rem;
     padding: 0.5rem 0;
 }
 
-/* 使用flexbox，日期和标题在同一行 */
 .talk-header {
     display: flex;
-    align-items: flex-start; /* 顶部对齐 */
+    align-items: flex-start;
     margin-bottom: 0.2rem;
-    gap: 0.8rem; /* 日期和标题之间的间距 */
+    gap: 0.5rem;
 }
 
-/* 日期部分 - 固定宽度，不换行 */
 .talk-date {
     color: #6a1b9a;
     font-weight: 500;
-    font-size: 0.95em;
+    font-size: 0.9em;
     white-space: nowrap;
-    flex-shrink: 0; /* 不收缩 */
-    min-width: 6rem; /* 固定最小宽度 */
+    flex-shrink: 0;
 }
 
-/* 标题部分 - 可伸缩，换行时对齐标题 */
 .talk-title {
     font-weight: 600;
     color: #333;
-    line-height: 1.4;
-    text-align: left;
-    word-break: break-word; /* 允许单词换行 */
-    flex: 1; /* 占据剩余空间 */
-    min-width: 0; /* 重要：允许内容换行 */
-}
-
-/* 第二行：活动信息 */
-.talk-meta {
-    margin-left: 7rem; /* 6rem日期宽度 + 1rem间距 */
-    color: #666;
-    font-size: 0.95em;
+    font-size: 1.05em;
     line-height: 1.3;
+    flex: 1;
 }
 
-.talk-info {
+.talk-meta {
     color: #666;
+    font-size: 0.9em;
+    line-height: 1.2;
+    margin-left: 5rem; /* 根据日期长度调整 */
 }
 
-.talk-info a {
+.event-link {
     color: #2358ad;
     text-decoration: none;
 }
 
-.talk-info a:hover {
+.event-link:hover {
     text-decoration: underline;
 }
 
-/* 无内容时的样式 */
 .no-talks {
     font-style: italic;
     color: #666;
     padding: 1rem 0;
     text-align: center;
-    background: #f8f9fa;
-    border-radius: 4px;
 }
 
-/* 响应式设计 */
+/* 响应式 */
 @media screen and (max-width: 768px) {
     .talk-header {
         flex-direction: column;
         gap: 0.2rem;
     }
     
-    .talk-date {
-        min-width: auto;
-        margin-right: 0;
-        margin-bottom: 0.2rem;
-        font-size: 0.9em;
-    }
-    
-    .talk-title {
-        font-size: 1em;
-    }
-    
     .talk-meta {
         margin-left: 0;
         font-size: 0.85em;
     }
-    
-    .no-talks {
-        margin-left: 0;
-        font-size: 0.9em;
-        padding: 0.7rem 0;
-    }
 }
-
 // 链接样式统一
 a {
     color: #2358ad;

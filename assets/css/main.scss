@@ -494,23 +494,24 @@ a:hover {
 }
 
 
-/* Talk 栏目样式 - 完美对齐版本 */
+/* Talk 栏目样式 - 调整与publication一致 */
 .talk-item {
-    margin-bottom: 1rem;
-    padding: 0.5rem 0;
+    margin-bottom: 0.3rem; /* 与publication-item的0.3rem保持一致 */
+    padding: 0.3rem 0; /* 与publication-item的0.3rem保持一致 */
 }
 
 /* 关键：使用flexbox，日期固定宽度，标题可换行 */
 .talk-header {
     display: flex;
     align-items: flex-start; /* 顶部对齐 */
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.1rem; /* 与publication-header的0.1rem保持一致 */
+    line-height: 1.1; /* 与publication-header的1.1保持一致 */
 }
 
-/* 日期 - 固定宽度，不换行 */
+/* 日期 - 固定宽度，不换行，加粗 */
 .talk-date {
     color: #6a1b9a;
-    font-weight: 500;
+    font-weight: 550; /* 加粗，与publication-number保持一致 */
     font-size: 0.95em;
     white-space: nowrap;
     flex-shrink: 0; /* 不收缩 */
@@ -525,43 +526,51 @@ a:hover {
     min-width: 0; /* 关键：允许内容换行 */
 }
 
-/* 标题 - 可以换行 */
+/* 标题 - 可以换行，加粗 */
 .talk-title {
-    font-weight: 600;
+    font-weight: 600; /* 与publication-title的600保持一致 */
     color: #333;
-    font-size: 1.05em;
-    line-height: 1.4;
+    font-size: 1.05em; /* 与publication-title保持一致 */
+    line-height: 1.1; /* 减小行距，与publication保持一致 */
     display: block; /* 变为块级元素以便换行 */
     word-wrap: break-word; /* 允许单词换行 */
     overflow-wrap: break-word; /* 更好的换行支持 */
 }
 
-/* 元信息 - 对齐标题左侧 */
+/* 元信息 - 对齐标题左侧，加粗 */
 .talk-meta {
     color: #666;
-    font-size: 0.95em;
-    line-height: 1.3;
+    font-size: 0.95em; /* 与publication-meta保持一致 */
+    line-height: 1.1 !important; /* 与publication-meta的1.1保持一致 */
     margin-left: 90px; /* 80px日期宽度 + 10px间距 */
-    padding-top: 0.1rem;
+    padding-top: 0.02rem; /* 几乎为零，与publication-meta保持一致 */
+    margin-bottom: 0 !important; /* 与publication-meta保持一致 */
+    font-weight: 550; /* 加粗，与publication-meta保持一致 */
+    text-align: left;
 }
 
 .talk-info {
     color: #666;
+    font-weight: 550; /* 加粗 */
+    display: inline; /* 与publication-info保持一致 */
 }
 
 .event-link {
     color: #2358ad;
     text-decoration: none;
+    font-weight: 550; /* 加粗，与publication-meta a保持一致 */
 }
 
 .event-link:hover {
     text-decoration: underline;
+    color: #2358ad;
+    font-weight: 550; /* 保持加粗 */
 }
 
 .no-talks {
     font-style: italic;
     color: #666;
-    padding: 1rem 0;
+    padding: 0.8rem 0; /* 与no-publications的0.8rem保持一致 */
     text-align: center;
     background: #f8f9fa;
     border-radius: 4px;
@@ -582,21 +591,52 @@ a:hover {
     }
     
     .talk-title {
-        font-size: 1em;
+        font-size: 1em; /* 移动端调整 */
     }
     
     .talk-meta {
         margin-left: 0;
-        font-size: 0.85em;
+        font-size: 0.85em; /* 与publication-meta的响应式一致 */
+        line-height: 1.1 !important;
     }
     
     .no-talks {
         font-size: 0.9em;
-        padding: 0.7rem 0;
+        padding: 0.7rem 0; /* 调整移动端内边距 */
     }
 }
 
+/* 打印样式 */
+@media print {
+    .talk-item {
+        page-break-inside: avoid;
+        margin-bottom: 0.5rem;
+        padding: 0.4rem 0;
+    }
+    
+    .talk-date {
+        color: #000;
+        font-weight: 600;
+    }
+    
+    .talk-title {
+        font-weight: 600;
+    }
+    
+    .event-link {
+        color: #000;
+        text-decoration: underline;
+    }
+}
 
+/* 确保与Publications样式一致 */
+.talk-item {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.talk-title {
+    font-style: normal;
+}
 // Useful Links
 .link-list {
     margin: 1rem 0; // 减少外边距

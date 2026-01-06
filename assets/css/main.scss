@@ -494,14 +494,13 @@ a:hover {
 }
 
 
-// Talks项目
-
-/* Talk 栏目样式 */
+/* Talk 栏目样式 - 简化版，匹配现有HTML */
 .talk-item {
     margin-bottom: 1rem;
     padding: 0.5rem 0;
 }
 
+/* 使用flexbox，日期和标题在同一行 */
 .talk-header {
     display: flex;
     align-items: flex-start; /* 顶部对齐 */
@@ -510,40 +509,29 @@ a:hover {
 }
 
 /* 日期部分 - 固定宽度，不换行 */
-.talk-date-wrapper {
-    flex: 0 0 auto; /* 不伸缩，固定宽度 */
-    white-space: nowrap;
-}
-
 .talk-date {
     color: #6a1b9a;
     font-weight: 500;
     font-size: 0.95em;
+    white-space: nowrap;
+    flex-shrink: 0; /* 不收缩 */
+    min-width: 6rem; /* 固定最小宽度 */
 }
 
 /* 标题部分 - 可伸缩，换行时对齐标题 */
-.talk-content-wrapper {
+.talk-title {
+    font-weight: 600;
+    color: #333;
+    line-height: 1.4;
+    text-align: left;
+    word-break: break-word; /* 允许单词换行 */
     flex: 1; /* 占据剩余空间 */
     min-width: 0; /* 重要：允许内容换行 */
 }
 
-.talk-title {
-    font-weight: 600;
-    color: #333;
-    display: inline;
-    line-height: 1.4;
-    text-align: left;
-}
-
-/* 标题换行时的缩进 */
-.talk-content-wrapper .talk-title {
-    display: inline-block;
-    width: 100%;
-}
-
 /* 第二行：活动信息 */
 .talk-meta {
-    margin-left: 5.5rem; /* 与标题开始位置对齐，根据日期宽度调整 */
+    margin-left: 7rem; /* 6rem日期宽度 + 1rem间距 */
     color: #666;
     font-size: 0.95em;
     line-height: 1.3;
@@ -570,140 +558,36 @@ a:hover {
     text-align: center;
     background: #f8f9fa;
     border-radius: 4px;
-} 
-
-// 出版物项目 - 使用固定边距
-.publication-item {
-    margin-bottom: 1rem;
-    padding: 0.8rem 0;
-    position: relative;
 }
 
-// 第一行：标题和作者 - 调整行高
-.publication-header {
-    display: block;
-    margin-bottom: 0.2rem; // 减小底部边距
-    line-height: 1.3; // 从1.4减小到1.3
-}
-
-.publication-number {
-    font-weight: 500;
-    margin-right: 0.5rem;
-    color: #6a1b9a;
-    display: inline;
-}
-
-.publication-title {
-    font-weight: 600;
-    font-size: 1.05em;
-    color: #333;
-    display: inline;
-    text-align: left;
-    line-height: 1.3; // 添加固定的行高
-}
-
-.publication-authors {
-    color: #666;
-    font-size: 0.95em;
-    display: inline;
-    line-height: 1.3; // 添加固定的行高
-}
-
-// 第二行：元信息和链接
-.publication-meta {
-    display: block;
-    color: #666;
-    font-size: 0.95em;
-    margin-left: 1.8rem;
-    line-height: 1.2; // 保持较小的行高
-    text-align: left;
-    font-weight: 550;
-    margin-top: 0.1rem; // 减小与标题行的间距
-}
-
-.publication-info {
-    display: inline;
-    color: #666;
-    font-weight: 550;
-}
-
-.publication-links {
-    display: inline;
-    margin-left: 0.5rem;
-    font-weight: 550;
-}
-
-.publication-meta a {
-    color: #2358ad;
-    text-decoration: none;
-    font-weight: 550;
-}
-
-.publication-meta a:hover {
-    text-decoration: underline;
-    color: #2358ad;
-    font-weight: 550;
-}
-
-// Abstract按钮
-.abstract-toggle {
-    background: none;
-    border: none;
-    color: #2358ad;
-    text-decoration: none;
-    cursor: pointer;
-    padding: 0;
-    font: inherit;
-    font-size: 0.9em;
-    transition: color 0.2s ease;
-}
-
-.abstract-toggle:hover {
-    text-decoration: underline;
-    color: #2358ad;
-}
-
-// Abstract容器 - 固定边距，确保动画不影响布局
-.publication-abstract-container {
-    overflow: hidden;
-    margin-left: 1.8rem;
-}
-
-// Abstract内容 - 平滑动画
-.publication-abstract {
-    background: #f8f9fa;
-    padding: 0;
-    margin: 0.5rem 0 0 0;
-    border-left: 3px solid #6194ec;
-    border-radius: 0 3px 3px 0;
-    font-size: 0.9em;
-    line-height: 1.5;
-    color: #555;
-    text-align: left;
-    max-height: 0;
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
-    transform: translateY(-5px);
-}
-
-// Abstract展开状态
-.publication-abstract.open {
-    max-height: 500px; // 足够容纳大多数摘要
-    opacity: 1;
-    padding: 0.8rem 1rem;
-    transform: translateY(0);
-    margin-top: 0.5rem;
-}
-
-// 无内容时的样式
-.no-publications {
-    font-style: italic;
-    color: #666;
-    padding: 1rem 0;
-    text-align: center;
-    background: #f8f9fa;
-    border-radius: 4px;
-    margin-left: 1.8rem;
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .talk-header {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+    
+    .talk-date {
+        min-width: auto;
+        margin-right: 0;
+        margin-bottom: 0.2rem;
+        font-size: 0.9em;
+    }
+    
+    .talk-title {
+        font-size: 1em;
+    }
+    
+    .talk-meta {
+        margin-left: 0;
+        font-size: 0.85em;
+    }
+    
+    .no-talks {
+        margin-left: 0;
+        font-size: 0.9em;
+        padding: 0.7rem 0;
+    }
 }
 
 // 链接样式统一

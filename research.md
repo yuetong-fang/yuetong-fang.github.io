@@ -114,15 +114,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 <section class="section">
-<h3 class="section-title">Talks</h3>
+    <h3 class="section-title">Talks</h3>
 
 {% assign talks = site.data.talks | sort: "date" | reverse %}
 {% if talks.size > 0 %}
 {% for talk in talks %}
 <div class="talk-item">
     <div class="talk-header">
-        <span class="talk-date">[{{ talk.date | date: "%Y %b" }}]</span>
-        <span class="talk-title">{{ talk.title }}</span>
+        <div class="talk-date-wrapper">
+            <span class="talk-date">[{{ talk.date | date: "%Y %b" }}]</span>
+        </div>
+        <div class="talk-content-wrapper">
+            <span class="talk-title">{{ talk.title }}</span>
+        </div>
     </div>
     <div class="talk-meta">
         <span class="talk-info">

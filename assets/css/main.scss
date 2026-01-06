@@ -494,47 +494,61 @@ a:hover {
 }
 
 
-// Talks项目样式 - 与Publications保持一致
+// Talks项目
+
+/* Talk项目 */
 .talk-item {
-    margin-bottom: 0.3rem !important; /* 进一步减小 */
-    padding: 0.3rem 0 !important; /* 进一步减小 */
+    margin-bottom: 0.4rem;
+    padding: 0.3rem 0;
     position: relative;
 }
 
+/* 使用flexbox布局让日期和标题对齐 */
 .talk-header {
-   display: block;
-    margin-bottom: 0.05rem !important; /* 最小化 */
-    line-height: 1.2 !important;
+    display: flex;
+    align-items: flex-start; /* 顶部对齐 */
+    margin-bottom: 0.05rem;
+    line-height: 1.2;
+    gap: 0.5rem; /* 日期和标题之间的间距 */
+}
+
+/* 日期容器 - 固定宽度，不换行 */
+.talk-date-wrapper {
+    flex-shrink: 0; /* 防止日期被压缩 */
+    min-width: 70px; /* 为日期保留足够空间 */
 }
 
 .talk-date {
-    font-weight: 600;
-    margin-right: 0.8rem;
+    font-weight: 500;
     color: #6a1b9a;
-    display: inline;
-    font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
-    font-size: 0.95em;
+    white-space: nowrap; /* 日期不换行 */
+}
+
+/* 标题容器 - 可以换行，与日期左侧对齐 */
+.talk-content-wrapper {
+    flex: 1; /* 占据剩余空间 */
+    min-width: 0; /* 允许内容换行 */
 }
 
 .talk-title {
     font-weight: 600;
     font-size: 1.05em;
     color: #333;
-    display: inline;
     text-align: left;
-    font-style: normal
+    line-height: 1.2;
+    display: block;
 }
 
+/* 元信息 */
 .talk-meta {
-    display: block;
     color: #666;
-    font-size: 0.95em;
-    margin-left: 5.5rem;
-    line-height: 1.1 !important; /* 进一步减小 */
+    font-size: 0.92em;
+    margin-left: 75px; /* 与标题对齐，70px + 5px间距 */
+    line-height: 1.1;
     text-align: left;
     font-weight: 550;
-    margin-top: 0.05rem !important; /* 几乎为零 */
-    margin-bottom: 0.05 !important;
+    margin-top: 0.02rem;
+    margin-bottom: 0;
 }
 
 .talk-info {
@@ -543,16 +557,28 @@ a:hover {
     font-weight: 550;
 }
 
-// 无Talks时的样式
+.event-link {
+    color: #2358ad;
+    text-decoration: none;
+    font-weight: 550;
+}
+
+.event-link:hover {
+    text-decoration: underline;
+    color: #2358ad;
+}
+
+/* 无内容时的样式 */
 .no-talks {
     font-style: italic;
     color: #666;
-    padding: 0.8rem 0;
+    padding: 0.6rem 0;
     text-align: center;
     background: #f8f9fa;
     border-radius: 4px;
-    margin-left: 6.5rem;
+    font-size: 0.95em;
 }
+
 
 // 响应式设计
 @media screen and (max-width: 768px) {

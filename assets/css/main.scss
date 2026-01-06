@@ -494,86 +494,90 @@ a:hover {
 }
 
 
-/* Talk 栏目样式 - 调整与publication一致 */
+/* Talk 栏目样式 - 进一步缩小间距 */
 .talk-item {
-    margin-bottom: 0.3rem; /* 与publication-item的0.3rem保持一致 */
-    padding: 0.3rem 0; /* 与publication-item的0.3rem保持一致 */
+    margin-bottom: 0.2rem;
+    padding: 0.2rem 0;
 }
 
-/* 关键：使用flexbox，日期固定宽度，标题可换行 */
 .talk-header {
     display: flex;
-    align-items: flex-start; /* 顶部对齐 */
-    margin-bottom: 0.1rem; /* 与publication-header的0.1rem保持一致 */
-    line-height: 1.1; /* 与publication-header的1.1保持一致 */
+    align-items: flex-start;
+    margin-bottom: 0.05rem;
+    line-height: 1.1;
 }
 
-/* 日期 - 固定宽度，不换行，加粗 */
 .talk-date {
     color: #6a1b9a;
-    font-weight: 550; /* 加粗，与publication-number保持一致 */
+    font-weight: 550;
     font-size: 0.95em;
     white-space: nowrap;
-    flex-shrink: 0; /* 不收缩 */
-    width: 80px; /* 固定宽度，足够显示 "[2025 Feb]" */
-    padding-right: 10px; /* 日期和标题之间的间距 */
-    box-sizing: border-box; /* 确保宽度包含padding */
+    flex-shrink: 0;
+    width: 85px;
+    padding-right: 8px;
+    box-sizing: border-box;
 }
 
-/* 标题容器 - 占据剩余空间，处理换行 */
 .talk-title-wrapper {
-    flex: 1; /* 占据剩余空间 */
-    min-width: 0; /* 关键：允许内容换行 */
+    flex: 1;
+    min-width: 0;
 }
 
-/* 标题 - 可以换行，加粗 */
 .talk-title {
-    font-weight: 600; /* 与publication-title的600保持一致 */
+    font-weight: 600;
     color: #333;
-    font-size: 1.05em; /* 与publication-title保持一致 */
-    line-height: 1.1; /* 减小行距，与publication保持一致 */
-    display: block; /* 变为块级元素以便换行 */
-    word-wrap: break-word; /* 允许单词换行 */
-    overflow-wrap: break-word; /* 更好的换行支持 */
+    font-size: 1.05em;
+    line-height: 1.1;
+    display: block;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
-/* 元信息 - 对齐标题左侧，加粗 */
+/* 元信息 - event item加粗 */
 .talk-meta {
     color: #666;
-    font-size: 0.95em; /* 与publication-meta保持一致 */
-    line-height: 1.1 !important; /* 与publication-meta的1.1保持一致 */
-    margin-left: 90px; /* 80px日期宽度 + 10px间距 */
-    padding-top: 0.02rem; /* 几乎为零，与publication-meta保持一致 */
-    margin-bottom: 0 !important; /* 与publication-meta保持一致 */
-    font-weight: 550; /* 加粗，与publication-meta保持一致 */
+    font-size: 0.95em;
+    line-height: 1.1 !important;
+    margin-left: 93px;
+    padding-top: 0.01rem;
+    margin-bottom: 0 !important;
+    font-weight: 550; /* 已经加粗 */
     text-align: left;
 }
 
+/* Event信息加粗 */
 .talk-info {
     color: #666;
-    font-weight: 550; /* 加粗 */
-    display: inline; /* 与publication-info保持一致 */
+    font-weight: 550 !important; /* 加粗 */
+    display: inline;
 }
 
+/* Event链接加粗 */
 .event-link {
     color: #2358ad;
     text-decoration: none;
-    font-weight: 550; /* 加粗，与publication-meta a保持一致 */
+    font-weight: 550 !important; /* 加粗 */
 }
 
 .event-link:hover {
     text-decoration: underline;
     color: #2358ad;
-    font-weight: 550; /* 保持加粗 */
+    font-weight: 550 !important; /* 保持加粗 */
+}
+
+/* 普通文字部分也需要加粗（如果没有链接的情况） */
+.talk-meta .talk-info:not(a) {
+    font-weight: 550 !important;
 }
 
 .no-talks {
     font-style: italic;
     color: #666;
-    padding: 0.8rem 0; /* 与no-publications的0.8rem保持一致 */
+    padding: 0.6rem 0;
     text-align: center;
     background: #f8f9fa;
     border-radius: 4px;
+    font-weight: 550; /* 无内容时也加粗 */
 }
 
 /* 响应式设计 */
@@ -584,25 +588,36 @@ a:hover {
     }
     
     .talk-date {
-        width: auto; /* 移动端恢复自动宽度 */
+        width: auto;
         padding-right: 0;
-        margin-bottom: 0.2rem;
+        margin-bottom: 0.1rem;
         font-size: 0.9em;
     }
     
     .talk-title {
-        font-size: 1em; /* 移动端调整 */
+        font-size: 1em;
     }
     
     .talk-meta {
         margin-left: 0;
-        font-size: 0.85em; /* 与publication-meta的响应式一致 */
+        font-size: 0.85em;
         line-height: 1.1 !important;
+        padding-top: 0.01rem;
+        font-weight: 550 !important; /* 响应式也保持加粗 */
+    }
+    
+    .talk-info {
+        font-weight: 550 !important; /* 响应式加粗 */
+    }
+    
+    .event-link {
+        font-weight: 550 !important; /* 响应式加粗 */
     }
     
     .no-talks {
         font-size: 0.9em;
-        padding: 0.7rem 0; /* 调整移动端内边距 */
+        padding: 0.5rem 0;
+        font-weight: 550; /* 响应式加粗 */
     }
 }
 
@@ -623,9 +638,14 @@ a:hover {
         font-weight: 600;
     }
     
+    .talk-info {
+        font-weight: 600 !important; /* 打印时加粗 */
+    }
+    
     .event-link {
         color: #000;
         text-decoration: underline;
+        font-weight: 600 !important; /* 打印时加粗 */
     }
 }
 
@@ -637,6 +657,9 @@ a:hover {
 .talk-title {
     font-style: normal;
 }
+
+
+
 // Useful Links
 .link-list {
     margin: 1rem 0; // 减少外边距

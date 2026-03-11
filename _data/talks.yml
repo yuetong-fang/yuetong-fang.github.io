@@ -16,3 +16,9 @@
   event_url: "https://math.univ-angers.fr/seminaires/seminaires-systemes-dynamiques-et-geometrie/"
   location: "Angers, France"
   date: "2025-12-09"
+
+- title: "Continuity of solutions to the complex Hessian equations on compact Hermitian manifolds"
+  event: "MARGE workshop 4"
+  event_url: "https://delcroix.perso.math.cnrs.fr/MARGE4/"
+  location: "Montpellier, France"
+  date: "2026-03-10"

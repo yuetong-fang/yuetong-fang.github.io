@@ -81,12 +81,6 @@ last_modified: 2026-03-11
         </span>
         {% endif %}
 
-        {% if paper.code %}
-        <span class="publication-links">
-            [<a href="{{ paper.code }}" target="_blank">Code</a>]
-        </span>
-        {% endif %}
-
         {% if paper.abstract %}
         <span class="publication-links">
             [<button class="abstract-toggle" data-target="abstract-{{ forloop.index }}">Abstract</button>]

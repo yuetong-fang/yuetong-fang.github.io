@@ -1,15 +1,4 @@
 # 预印本 - Preprints
-- type: preprint
-  title: "Integrability of $(\\omega, m)$-subharmonic functions on compact Hermitian manifolds"
-  authors: Y. Fang
-  archive: "arXiv preprint"
-  year: 2025
-  arxiv: "2503.19678"
-  abstract: >
-    Let $(X, \omega)$ be a compact Hermitian manifold of dimension $n$. 
-    We show that all $(\omega ,m)$-subharmonic functions are $L^p$-integrable 
-    on $X$, for any $ p < \frac{n}{n-m}$.
-  status: "Accepted for publication in Ann. Polon. Math."
 
 - type: preprint
   title: "Continuity of solutions to complex Hessian equations on compact Hermitian manifolds"
@@ -29,3 +18,19 @@
 
 
 # 期刊文章 - Publications
+
+- type: "journal"
+  title: "Integrability of $(\\omega, m)$-subharmonic functions on compact Hermitian manifolds"
+  authors: "Y. Fang"
+  journal: "Ann. Polon. Math."
+  year: 2026
+  volume: "136"
+  issue: "3"
+  pages: "261–274"
+  arxiv: "2503.19678"
+  doi: "10.4064/ap250407-17-9"
+  code: ""
+  abstract: >
+    Let $(X, \omega)$ be a compact Hermitian manifold of dimension $n$. 
+    We show that all $(\omega ,m)$-subharmonic functions are $L^p$-integrable 
+    on $X$, for any $ p < \frac{n}{n-m}$.

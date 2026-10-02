@@ -47,7 +47,7 @@ last_modified: 2026-03-11
 {% endif %}
 </section>
 
-<!-- <section class="section">
+<section class="section">
     <h3 class="section-title">Publications</h3>
 
 {% assign journal_papers = site.data.publications | where: "type", "journal" | sort: "year" | reverse %}
@@ -56,26 +56,49 @@ last_modified: 2026-03-11
 <div class="publication-item">
     <div class="publication-header">
         <span class="publication-number">{{ forloop.length | minus: forloop.index0 }}.</span>
-        <span class="publication-title">{{ paper.title }}</span>
-        {% if paper.authors != "Y. Fang" and paper.authors != "Fang, Y." %}
-        <span class="publication-authors"> with {{ paper.authors | remove: "Fang, Y., " | remove: ", Fang, Y." | remove: "Y. Fang, " | remove: ", Y. Fang" }}</span>
-        {% endif %}
+        <span class="publication-authors">{{ paper.authors }}.</span>
+        <span class="publication-title">{{ paper.title }}.</span>
     </div>
+
     <div class="publication-meta">
-        <span class="publication-info">{{ paper.journal }}, {{ paper.year }}{% if paper.volume %}, Vol. {{ paper.volume }}{% endif %}{% if paper.issue %}, No. {{ paper.issue }}{% endif %}{% if paper.pages %}, pp. {{ paper.pages }}{% endif %}</span>
+        <span class="publication-info">
+            {% if paper.journal %}{{ paper.journal }}{% endif %}
+            {% if paper.volume %} <strong>{{ paper.volume }}</strong>{% endif %}
+            {% if paper.year %} ({{ paper.year }}){% endif %}
+            {% if paper.issue %}, no. {{ paper.issue }}{% endif %}
+            {% if paper.pages %}, {{ paper.pages }}{% endif %}.
+        </span>
+
+        {% if paper.arxiv %}
+        <span class="publication-links">
+            [<a href="https://arxiv.org/abs/{{ paper.arxiv }}" target="_blank">arXiv</a>]
+        </span>
+        {% endif %}
+
         {% if paper.doi %}
-        <span class="publication-links">[<a href="https://doi.org/{{ paper.doi }}" target="_blank">DOI</a>]</span>
+        <span class="publication-links">
+            [<a href="https://doi.org/{{ paper.doi }}" target="_blank">DOI</a>]
+        </span>
         {% endif %}
+
         {% if paper.code %}
-        <span class="publication-links">[<a href="{{ paper.code }}" target="_blank">Code</a>]</span>
+        <span class="publication-links">
+            [<a href="{{ paper.code }}" target="_blank">Code</a>]
+        </span>
         {% endif %}
+
         {% if paper.abstract %}
-        <span class="publication-links">[<button class="abstract-toggle" data-target="abstract-{{ forloop.index }}">Abstract</button>]</span>
+        <span class="publication-links">
+            [<button class="abstract-toggle" data-target="abstract-{{ forloop.index }}">Abstract</button>]
+        </span>
         {% endif %}
     </div>
+
     {% if paper.abstract %}
     <div class="publication-abstract-container">
-        <div class="publication-abstract" id="abstract-{{ forloop.index }}">{{ paper.abstract }}</div>
+        <div class="publication-abstract" id="abstract-{{ forloop.index }}">
+            {{ paper.abstract }}
+        </div>
     </div>
     {% endif %}
 </div>
@@ -83,7 +106,7 @@ last_modified: 2026-03-11
 {% else %}
 <div class="no-publications">No publications available at the moment.</div>
 {% endif %}
-</section> -->
+</section>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

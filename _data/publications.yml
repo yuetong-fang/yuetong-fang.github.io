@@ -29,7 +29,6 @@
   pages: "261–274"
   arxiv: "2503.19678"
   doi: "10.4064/ap250407-17-9"
-  code: ""
   abstract: >
     Let $(X, \omega)$ be a compact Hermitian manifold of dimension $n$. 
     We show that all $(\omega ,m)$-subharmonic functions are $L^p$-integrable 

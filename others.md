@@ -8,6 +8,12 @@ last_modified: 2026-10-02
     <h1>Others</h1>
 </div>
 
+<p>
+        
+        <a href="https://arxiv.org/abs/2609.32028v1" target="_blank" class="text-link">What math means to me</a>
+        by Larry Guth.
+    </p>
+
 <section class="section">
     <h3 class="section-title">Links</h3>
 {% assign links = site.data.links %}
